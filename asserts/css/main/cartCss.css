@@ -1,0 +1,21 @@
+/* Top Selling */
+.top-selling {
+    font-size: 14px;
+}
+
+.top-selling .table thead {
+    background: #f6f6fe;
+}
+
+.top-selling .table thead th {
+    border: 0;
+}
+
+.top-selling .table tbody td {
+    vertical-align: middle;
+}
+
+.top-selling img {
+    border-radius: 5px;
+    max-width: 60px;
+}

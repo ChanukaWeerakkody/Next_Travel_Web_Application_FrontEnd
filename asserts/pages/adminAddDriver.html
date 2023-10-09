@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Driver - Admin - Car Rental</title>
+
+
+    <!-- Vendor CSS Files -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/aos/aos.css" rel="stylesheet">
+    <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!--google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Roboto:ital,wght@1,100&family=Rubik+Burned&family=Space+Mono&display=swap" rel="stylesheet">
+
+
+    <!--CSS File-->
+    <link href="../css/main/driver.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<!--Admin View Driver-->
+<main id="spaAdminViewDriver">
+    <main id="adminViewDriverSpa" >
+        <div class="carAdminBody container-fluid mt-5 ms-5" style="top:-15px;height: 691px;">
+            <h3 style="margin-left: 26px; margin-top: 23px;">View Driver</h3>
+            <form id="carAdminForm" style="margin-left: 5px; margin-top: 44px;" >
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupCF">
+
+                            <input class="form-control" id="save-driver-Id" placeholder="Driver Id" type="text">
+                            <span class="control-error" id="lblcbrnd"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-groupTF">
+
+                            <input class="form-control" id="save-driver-name" placeholder="Name" type="text">
+                            <span class="control-error" id="lbltrnsm"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupTT">
+                            <input class="form-control" id="save-driver-address" placeholder="Address" type="text">
+                            <span class="control-error" id="lbltype"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-groupNFP">
+                            <input class="form-control" id="save-driver-dob" placeholder="DOB" type="text">
+                            <span class="control-error" id="lblnoofpass"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupFT">
+                            <input class="form-control" id="save-driver-nic" placeholder="NIC" type="text">
+                            <span class="control-error" id="lblfuel"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-groupMRT">
+                            <input class="form-control" id="save-driver-license" placeholder="License Number" type="text">
+                            <span class="control-error" id="lblmrt"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+            </form>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <button class="btn btn-primary" id="btnAddDriver" style="background-color: #14131C;color: white; border: none">Add Driver</button>
+                </div>
+
+                <div class="col-sm-3" style="margin-left: -72px">
+                    <button class="btn btn-primary" id="btnUpdateDriver" style="background-color: navy;color: white; border: none">Update</button>
+                </div>
+
+                <div class="col-sm-3" style="margin-left: -111px">
+                    <button class="btn btn-primary" id="btnDeleteDriver" style="background-color: orangered;color: white; border: none">Delete</button>
+                </div>
+            </div>
+
+            <div class="col-sm-9 mt-lg-3">
+
+                <table style="width: 798px;margin-left: -10px; margin-top: 46px;" class="table table-borderless">
+                    <thead class="bg-dark shadow-lg" style="background-color:white; color: black;">
+                    <tr>
+                        <th scope="col" class="text-light">Driver Id</th>
+                        <th scope="col" class="text-light">Name</th>
+                        <th scope="col" class="text-light">Address</th>
+                        <th scope="col" class="text-light">DOB</th>
+                        <th scope="col" class="text-light">NIC</th>
+                        <th scope="col" class="text-light">License No</th>
+                        <th scope="col" class="text-light">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</main>
+</body>
+</html>

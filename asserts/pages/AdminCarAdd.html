@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Car</title>
+
+    <!-- Vendor CSS Files -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/aos/aos.css" rel="stylesheet">
+    <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/main/normalize.css" rel="stylesheet">
+    <link href="../css/main/carCard.css" rel="stylesheet">
+    <link href="../css/main/cartCss.css" rel="stylesheet">
+    <link href="../css/main/adminDashboard.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- ======= Header ======= -->
+<header class="header d-flex align-items-center" id="header" >
+
+    <!--========================-->
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="../image/logo.jpg" alt="">
+            <span class="d-none d-lg-block">ECar Rental</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="../image/hatMan.jpg" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Hasitha Lakshan</span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>Hasitha Lakshan</h6>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-minecart"></i>
+                            <span>Car Rental</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+</header><!-- End Header -->
+
+
+
+
+
+<!-- ======= Sidebar ======= -->
+<aside class="sidebar" id="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link " href="index.html">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="fa-solid fa-book"></i>
+                <span>Reservation</span>
+            </a>
+        </li><!-- End Reser Page Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-solid fa-car-rear"></i><span>Car</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="car-nav">
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>View Car</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Car Schedule</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Driver Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="fa-regular fa-user"></i>
+                <span>Customer</span>
+            </a>
+        </li><!-- End Customer Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-solid fa-user-group"></i><span>Driver</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tables-nav">
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>View Driver</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Driver Schedule</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Driver Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="fa-solid fa-money-check-dollar"></i>
+                <span>Payment</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+    </ul>
+</aside>
+
+<!--=====================================================================================-->
+
+
+<main class="main" id="main">
+
+    <div class="container">
+        <section
+                class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                </div>
+
+                                <div class="d-flex align-items-end flex-column bd-highlight pb-4">
+                                    <!--Add btn-->
+                                    <div>
+                                        <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">View Vehicles</button>
+                                    </div>
+                                </div>
+
+                                <form class="row g-3">
+
+                                    <!--vehicle Type-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <!--<label for="name">vehicleType</label>-->
+                                        <input type="text" placeholder="Enter Type" name="carAddVehicleType" class="form-control" id="carAddVehicleType" required>
+                                    </div>
+
+                                    <!--Brand-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Brand" name="carAddVehicleBrand" class="form-control" id="carAddVehicleBrand" required>
+                                    </div>
+
+                                    <!--vehicle Modal-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Model" class="form-control" name="carAddVehicleModel" id="carAddVehicleModel" required>
+                                    </div>
+
+
+                                    <!--Transmission-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Transmission" name="carAddVehicleTransmission" class="form-control" id="carAddVehicleTransmission" required>
+                                    </div>
+
+                                    <!--Fuel-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Fuel Type" name="carAddVehicleFuel" class="form-control" id="carAddVehicleFuel" required>
+                                    </div>
+
+                                    <!--Daily Rate-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Daily Rate" name="carAddVehicleDailyRate" class="form-control" id="carAddVehicleDailyRate" required>
+                                    </div>
+
+                                    <!--Monthly Rate-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Monthly Rate" name="carAddVehicleMonthlyRate" class="form-control" id="carAddVehicleMonthlyRate" required>
+                                    </div>
+
+                                    <!--Extra Km Price-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Price For Extra Km" name="carAddVehiclePriceForExtraKm" class="form-control" id="carAddVehiclePriceForExtraKm" required>
+                                    </div>
+
+                                    <!--Free Mileage-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Free Mileage" name="carAddVehicleFreeMileage" class="form-control" id="carAddVehicleFreeMileage" required>
+                                    </div>
+
+                                    <!--Last Service Mileage-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Last Service Mileage" name="carAddVehicleLastServiceMileage" class="form-control" id="carAddVehicleLastServiceMileage" required>
+                                    </div>
+
+                                    <!--RegID-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Registration Id" name="carAddVehicleRegistrationId" class="form-control" id="carAddVehicleRegistrationId" required>
+                                    </div>
+
+                                    <!--Colour-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Vehicle Colour" name="carAddVehicleColour" class="form-control" id="carAddVehicleColour" required>
+                                    </div>
+
+                                    <!--Front-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Front-image" class="form-label ">Front</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Front-image">
+                                    </div>
+                                    <!--Back-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Back-image" class="form-label ">Back</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Back-image">
+                                    </div>
+                                    <!--Side-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Side-image" class="form-label ">Side</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Side-image">
+                                    </div>
+                                    <!--Interior-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Interior-image" class="form-label ">Interior</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Interior-image">
+                                    </div>
+
+
+                                    <!--Add btn-->
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add Vehicle</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+</main>
+
+
+
+
+
+
+<!--======================================================================================================-->
+
+
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/aos/aos.js"></script>
+<script src="../vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../vendor/swiper/swiper-bundle.min.js"></script>
+<script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+</body>
+</html>

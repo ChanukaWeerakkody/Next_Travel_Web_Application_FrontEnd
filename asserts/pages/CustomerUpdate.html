@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update Form</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    <link href="" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- ======= CustomerUpdate Section ======= -->
+<section class="contact" id="contact">
+    <div class="container" data-aos="fade-up">
+
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="d-flex justify-content-center py-4">
+                                <a class="logo d-flex align-items-center w-auto" href="index.html">
+                                    <span class="d-none d-lg-block">Update Your Details</span>
+                                </a>
+
+                            </div><!-- End Logo -->
+
+                            <div class="d-flex align-items-end flex-column bd-highlight pb-4">
+                                <!--Return Btn-->
+                                <div>
+                                    <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">back to Home</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+                                    <form class="row g-3 needs-validation" novalidate id="signInForm">
+                                        <!--name-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <!--                                            <label for="name">Your Name</label>-->
+                                            <input type="text" placeholder="Your Name" name="name" class="form-control" id="nameSignIn" required>
+                                        </div>
+
+                                        <!--email-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <!--                                            <label for="name">Your Email</label>-->
+                                            <input type="email" placeholder="Email" class="form-control" name="email" id="emailSignIn" required>
+                                        </div>
+
+                                        <!--nic-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="NIC" name="name" class="form-control" id="nicSignIn" required>
+                                        </div>
+
+                                        <!--Address-->
+                                        <div class="form-group col-md-6">
+                                            <input type="text" placeholder="Address" name="name" class="form-control" id="addressSignIn" required>
+                                        </div>
+
+                                        <!--Contact-->
+                                        <div class="form-group col-md-6">
+                                            <input type="text" placeholder="Contact" name="name" class="form-control" id="contactSignIn" required>
+                                        </div>
+
+                                        <!--Driving License-->
+                                        <div class="form-group col-md-6">
+                                            <input type="text" placeholder="Driving License" name="name" class="form-control" id="drivingLicenseSignIn" required>
+                                        </div>
+
+                                        <div class="w-100">
+                                            <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
+                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-NIC-image">
+                                        </div>
+
+                                        <!--username-->
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourUsername">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <input class="form-control" id="yourUsername" name="username" required
+                                                       type="text">
+                                                <div class="invalid-feedback">Please enter your username.</div>
+                                            </div>
+                                        </div>
+
+                                        <!--Password-->
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourPassword">Password</label>
+                                            <input class="form-control" id="yourPassword" name="password" required
+                                                   type="password">
+                                            <div class="invalid-feedback">Please enter your password!</div>
+                                        </div>
+
+                                        <!--submit btn-->
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" id="btnSignIn" type="button">Update</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+</section><!-- End CustomerUpdate Section -->
+
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<!-- Vendor JS Files -->
+
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

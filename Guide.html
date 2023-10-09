@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guide Admin</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Fonts -->
+    <link href="httpsbtnAdminAddCar://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="asserts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="asserts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="asserts/vendor/aos/aos.css" rel="stylesheet">
+    <link href="asserts/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="asserts/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
+    <link href="asserts/css/main/adminDashboard.css" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!----------------------------------------------------DASHBOARD FORM--------------------------------------->
+    <main id="adminHeaderMain">
+        <!----------------------------------------------------HEADER--------------------------------------->
+        <header class="header d-flex align-items-center">
+
+            <!--========================-->
+            <div class="d-flex align-items-center justify-content-between">
+                <a class="logo d-flex align-items-center" href="asserts/pages/index.html">
+                    <img alt="" src="asserts/image/Next_travel_Logo.png">
+                    <span class="d-none d-lg-block">NEXT TRAVEL</span>
+                </a>
+                <!--<i class="bi bi-list toggle-sidebar-btn"></i>-->
+            </div><!-- End Logo -->
+
+            <nav class="header-nav ms-auto">
+                <ul class="d-flex align-items-center">
+
+                    <li class="nav-item dropdown pe-3">
+
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+                            <img alt="Profile" class="rounded-circle" src="asserts/image/Pro_pic.jpg">
+                            <span class="d-none d-md-block dropdown-toggle ps-2">Chanuka Weerakkody</span>
+                        </a><!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            <li class="dropdown-header">
+                                <h6>Chanuka Weerakkody</h6>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                    <i class="bi bi-house"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+
+                        </ul><!-- End Profile Dropdown Items -->
+                    </li><!-- End Profile Nav -->
+
+                </ul>
+            </nav><!-- End Icons Navigation -->
+        </header>
+
+        <!----------------------------------------------------SIDEBAR FORM--------------------------------------->
+        <aside class="sidebar" id="sidebar">
+
+            <ul class="sidebar-nav" id="sidebar-nav">
+
+                <!-- Start Dashboard Page Nav -->
+                <li class="nav-item" id="adDash">
+                    <a class="nav-link ">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+
+                <li class="nav-heading">Pages</li>
+
+                <!-- Start Reser Page Nav
+                <li class="nav-item" id="adRes">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Reservation</span>
+                    </a>
+                </li> End Reser Page Nav
+
+                 Start Car Page Nav
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>Vehicle</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="car-nav">
+                        <li id="adViewCar">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add Vehicle</span>
+                            </a>
+                        </li>
+                        <li id="adViewCarView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View vehicle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> End Car Nav
+
+                 Start Package Page Nav
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#package-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>Package</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="package-nav">
+                        <li id="adViewPackage">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add Package</span>
+                            </a>
+                        </li>
+                        <li id="adViewPackageView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View Package</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> End Package Nav
+
+                 Start Customer Page Nav
+                <li class="nav-item" id="adViewAllCustomer">
+                    <a class="nav-link collapsed">
+                        <i class='bx bxs-user-voice'></i>
+                        <span>Customer</span>
+                    </a>
+                </li> End Customer Page Nav -->
+
+                <!-- Start Guide Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#guide-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>Guide</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="guide-nav">
+                        <li id="adViewGuide">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add Guide</span>
+                            </a>
+                        </li>
+                        <li id="adViewGuideView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View Guide</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li><!-- End Driver Nav -->
+
+                <!-- Start Hotel Page Nav
+                <li class="nav-item" id="adHotel">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Hotel</span>
+                    </a>
+                </li> End Hotel Page Nav -->
+
+
+                <!-- Start payment Page Nav
+                <li class="nav-item" id="adPayment">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-money-check-dollar"></i></i>
+                        <span>Payment</span>
+                    </a>
+                </li> End payment Page Nav -->
+            </ul>
+
+        </aside>
+
+        <!----------------------------------------------------DASHBOARD FORM--------------------------------------->
+        <main id="adminDashboard">
+            <main class="main" id="adminDashboardMain">
+
+                <div class="pagetitle">
+                    <h1>Dashboard</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="asserts/pages/index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div><!-- End Page Title -->
+
+                <section class="section dashboard">
+                    <div class="row">
+
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <!-- Booking Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card sales-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Guide <span>| Available Guides</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-book-bookmark"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>100</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Sales Card -->
+
+                                <!-- Income Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Income <span>| This Month</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-money-check"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>LKR 3,264</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Income Card -->
+
+                                <!-- Customers Card -->
+                                <div class="col-xxl-4 col-xl-12">
+
+                                    <div class="card info-card customers-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Register Users</h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-people"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>1244</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div><!-- End Customers Card -->
+
+                                <!-- Driver Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total Driver <span>| Available Drivers</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-people-group"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>30</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Driver Card -->
+
+                                <!-- Car Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total Vehicle <span>| Available Vehicles</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-car-rear"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>40</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div><!-- End Car Card -->
+
+                                <!-- Maintenance Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hotel Bookings </h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-car-burst"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>5</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Maintenance Card -->
+
+                            </div>
+                        </div><!-- End Left side columns -->
+                    </div>
+                </section>
+
+            </main><!-- End #main -->
+        </main>
+
+    </main>
+
+    <!----------------------------------------------------LOGIN FORM--------------------------------------->
+    <main id="spaAdminMainLogIn">
+    <main>
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="d-flex justify-content-center py-4">
+                                <a class="logo d-flex align-items-center w-auto" href="asserts/pages/index.html">
+                                    <img alt="" src="asserts/image/Next_travel_Logo.png">
+                                    <span class="d-none d-lg-block">NEXT TRAVEL</span>
+                                </a>
+                            </div><!-- End Logo -->
+
+
+                            <form id="loginForm" class="form-outline mb-4 card mb-3 card-body pt-4 pb-2">
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                    <p class="text-center small">Enter your username & password to login</p>
+                                </div>
+
+                                <div class="form-group col-md-14 mb-3">
+                                    <select aria-label="Default select example" class="form-select mb-3"
+                                            id="category">
+                                        <option disabled selected value="">Category</option>
+                                        <option value="Vehicle">Vehicle</option>
+                                        <option value="Guide">Guide</option>
+                                        <option value="Hotel">Hotel</option>
+                                        <option value="Package">Package</option>
+                                    </select>
+                                </div>
+
+                                <input class="form-control" id="username" placeholder="Email or Username" type="text" name="checkUsername" required>
+                                <br>
+
+
+                                <input class="form-control" id="password" placeholder="Password" type="text" name="checkPassword" required>
+                                <br>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="rememberMe" name="remember"
+                                               type="checkbox"
+                                               value="true">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Log In</button>
+
+
+                                <div class="text-center mb-3">
+
+                                    <div class="loginSource">
+                                        <button type="button" class="btn btn-link btn-floating mx-1" >
+                                            <i class='bx bxl-facebook-circle' ></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class='bx bxl-google'></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class='bx bxl-twitter' ></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class='bx bxl-github' ></i>
+                                        </button>
+                                        <p class="textColour" >Sign in with</p>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                            <div class="credits">
+                                Designed by <a href="https://github.com/ChanukaWeerakkody">Chanuka Weerakkody</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main><!-- End #main -->
+</main>
+
+    <!----------------------------------------------------GUIDE FORM--------------------------------------->
+    <main id="adminAddGuide">
+        <main class="main" id="adminGuideAdd">
+
+            <div class="container">
+                <section
+                        class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                                <div class="card mb-3">
+
+                                    <div class="card-body">
+
+                                        <div class="pt-4 pb-2">
+                                            <h5 class="card-title text-center pb-0 fs-4">Add Guide</h5>
+                                        </div>
+
+                                        <form class="row g-3" name="form1">
+
+
+                                            <!--Name-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3 "
+                                                       id="save-guide-name" placeholder="Full Name" name="fullName"
+                                                       type="text">
+                                            </div>
+
+                                            <!--address-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="new_guide_address"
+                                                       name="address"
+                                                       placeholder="Address" type="text">
+                                            </div>
+
+                                            <!--Age-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-guide-age" name="age"
+                                                       placeholder="Age" type="text">
+                                            </div>
+
+
+                                            <!--Contact number-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-guide-contactNumber" name="contactNumber"
+                                                       placeholder="Contact Number" type="text">
+                                            </div>
+
+
+                                            <!--Gender-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <select aria-label="Default select example" class="form-select mb-3"
+                                                        id="save-guide-gender" name="gender">
+                                                    <option disabled selected value="">Select Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+
+
+
+                                            <!--Experience-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-guide-Experience" name="experience"
+                                                       placeholder="Experience" type="text">
+                                            </div>
+
+                                            <!--Value of day-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-guide-price" name="price"
+                                                       placeholder="Price per Day" type="text">
+                                            </div>
+
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
+
+                                            <!--Guide Image-->
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Guide Image</label>
+                                                <input class="form-control guideImage" id=guideImage"
+                                                       name="guideImage" type="file">
+                                            </div>
+
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Front View Of NIC</label>
+                                                <input class="form-control frontViewNic" id=frontViewNic"
+                                                       name="frontView" type="file">
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Back View Of NIC</label>
+                                                <input class="form-control backViewNic" id=backViewNic"
+                                                       name="backView" type="file">
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Front View of Guide Id</label>
+                                                <input class="form-control frontViewGuideId" id=frontViewGuideId"
+                                                       name="sideView" type="file">
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Back View of Guide Id</label>
+                                                <input class="form-control BackViewGuideId" id=BackViewGuideId"
+                                                       name="interior" type="file">
+                                            </div>
+
+                                            <!--Add btn-->
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100" id="btnAdminAddGuide" type="button">Add
+                                                    Guide
+                                                </button>
+                                            </div>
+
+                                        </form>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </main>
+    </main>
+
+    <!----------------------------------------------------GUIDE VIEW FORM--------------------------------------->
+    <main id="spaAdminViewGuide">
+        <main class="main" id="adminViewGuideSpa">
+
+            <div class="pagetitle">
+                <h1>View Guides</h1>
+            </div><!-- End Page Title -->
+
+            <form id="guideViewForm" style="margin-left: 5px; margin-top: 44px;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupCF">
+                            <label class="form-label" for="update-guide-Id">Guide Id</label>
+                            <input class="form-control" disabled id="update-guide-Id"
+                                   type="text">
+                            <span class="control-error" id="lblVRegs"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-fullName">Full Name</label>
+                            <input class="form-control" id="update-guide-fullName"  type="text">
+                            <span class="control-error" id="lblVDailyRates"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupFT">
+                            <label class="form-label" for="update-guide-address">Address</label>
+                            <input class="form-control" id="update-guide-address" type="text">
+                            <span class="control-error" id="lblVMonthlyRates"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupMRT">
+                            <label class="form-label" for="update-guide-age">Age</label>
+                            <input class="form-control" id="update-guide-age" type="text">
+                            <span class="control-error" id="lblDmCosts"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-contact">Contact Number</label>
+                            <input class="form-control" id="update-guide-contact"
+                                   type="text">
+                            <span class="control-error" id="lblVLasts"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupFT">
+                            <label class="form-label" for="update-guide-price">Price Per Day</label>
+                            <input class="form-control" id="update-guide-price"
+                                   type="text">
+                            <span class="control-error" id="lblVFrees"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+            </form>
+
+            <div class="row">
+                <div class="col-sm-3" style="margin-left: 9px">
+                    <button class="btn btn-primary" id="btnUpdateGuide"
+                            style="background-color: navy;color: white; border: none">Update
+                    </button>
+                </div>
+
+                <div class="col-sm-3" style="margin-left: -152px">
+                    <button class="btn btn-primary" id="btnDeleteGuide"
+                            style="background-color: orangered;color: white; border: none">Delete
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 70vh;">
+                        <table class="table table-primary table-striped">
+                            <thead>
+                            <tr>
+                                <th>Guide Id</th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Age</th>
+                                <th>Contact Number</th>
+                                <th>Price per Day</th>
+                            </tr>
+                            </thead>
+                            <tbody id="itemTB">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </main><!-- End #main -->
+    </main>
+
+
+    <script src="asserts/js/jquery-3.6.1.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="asserts/vendor/aos/aos.js"></script>
+    <script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+    <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
+    <script src="asserts/js/controller/GuideAdminController.js"></script>
+    <script src="asserts/js/controller/GuideController.js"></script>
+
+</body>
+</html>

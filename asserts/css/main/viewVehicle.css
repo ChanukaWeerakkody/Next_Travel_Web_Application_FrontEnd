@@ -1,0 +1,48 @@
+/**@author : Hasitha Lakshan
+Project :CarRentalSystem
+Date :3/2/2023
+Time :12:04 AM
+*/
+
+
+body {
+    font-family: 'Space Mono', monospace;
+    background: #f6f9ff;
+    color: #444444;
+    overflow-x: hidden;
+}
+.carAdminBody{
+    position: absolute;
+    left:25vw;
+    background: #ffffff;
+    top: -3vh;
+    width: 800px;
+    scrollbar-width: thin;
+    scrollbar-color: #aab7cf transparent;
+    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+    height: 808px;
+}
+
+#carAdminForm{
+    border-color: black;
+    box-shadow: #4f5050;
+}
+
+.carAdminBody h1{
+    display: inline-block;
+
+}
+
+#btnAddVehicle{
+    position: relative;
+    top: 35px;
+    left: 6px;
+    width: 374px;
+}
+
+#btnViewVehicle{
+    position: relative;
+    top: -645px;
+    left: 614px;
+    width: 165px;
+}

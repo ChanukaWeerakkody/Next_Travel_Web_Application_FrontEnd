@@ -1,0 +1,141 @@
+/**@author : Hasitha Lakshan
+Project :CarRentalSystem
+Date :2/14/2023
+Time :4:38 PM
+*/
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: #fff;
+}
+
+.services .icon-box .icon {
+    margin-bottom: 10px;
+}
+
+.services .icon-box .icon i {
+    color: #47b2e4;
+    font-size: 36px;
+    transition: 0.3s;
+}
+
+.services .icon-box h4 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.services .icon-box h4 a {
+    color: #37517e;
+    transition: ease-in-out 0.3s;
+}
+
+.services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.services .icon-box:hover {
+    transform: translateY(-10px);
+}
+
+.services .icon-box:hover h4 a {
+    color: #47b2e4;
+}
+
+#lineHome{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 270px;
+    height: 2px;
+    background: #CCCCCC;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*Button*/
+.btn_RentIt{
+    width: 100px;
+    border-radius: 7px;
+    border-color: #333333;
+    background: white;
+}
+.btn_RentIt:hover{
+    width: 100px;
+    border-radius: 7px;
+    border-color: #444444;
+    /*5e6bef*/
+    background: #444444;
+    color: white;
+}
+
+/*Drop Down*/
+/*
+#carStoreDropDown1{
+    position: relative;
+    width: 300px;
+    margin-bottom: 10px;
+    !*left: 0;*!
+    !*top: 20px;*!
+}
+
+#carStoreDropDown2{
+    position: relative;
+    !*top: 80px;*!
+    !*left: -190px;*!
+}
+*/
+
+/* Slid Bar */
+.dashboard .news .post-item+.post-item {
+    margin-top: 15px;
+}
+
+.dashboard .news img {
+    width: 80px;
+    float: left;
+    border-radius: 5px;
+}
+
+.dashboard .news h4 {
+    font-size: 15px;
+    margin-left: 95px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dashboard .news h4 a {
+    color: #012970;
+    transition: 0.3s;
+}
+
+.dashboard .news h4 a:hover {
+    color: #4154f1;
+}
+
+.dashboard .news p {
+    font-size: 14px;
+    color: #777777;
+    margin-left: 95px;
+}
+
+.goToCartButton{
+    border-radius: 8px;
+    background: #333333;
+    color: white;
+}
+
+.goToCartButton:hover{
+    border-radius: 8px;
+    background: #444444;
+    color: white;
+    border: 2px solid #444444;
+}

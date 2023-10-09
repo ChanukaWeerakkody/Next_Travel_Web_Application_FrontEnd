@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Package</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Fonts -->
+    <link href="httpsbtnAdminAddCar://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="asserts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="asserts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="asserts/vendor/aos/aos.css" rel="stylesheet">
+    <link href="asserts/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="asserts/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
+    <link href="asserts/css/main/adminDashboard.css" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+
+    <!----------------------------------------------------DASHBOARD FORM--------------------------------------->
+    <main id="adminHeaderMain">
+        <!----------------------------------------------------HEADER--------------------------------------->
+        <header class="header d-flex align-items-center">
+
+            <!--========================-->
+            <div class="d-flex align-items-center justify-content-between">
+                <a class="logo d-flex align-items-center" href="asserts/pages/index.html">
+                    <img alt="" src="asserts/image/Next_travel_Logo.png">
+                    <span class="d-none d-lg-block">NEXT TRAVEL</span>
+                </a>
+                <!--<i class="bi bi-list toggle-sidebar-btn"></i>-->
+            </div><!-- End Logo -->
+
+            <nav class="header-nav ms-auto">
+                <ul class="d-flex align-items-center">
+
+                    <li class="nav-item dropdown pe-3">
+
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+                            <img alt="Profile" class="rounded-circle" src="asserts/image/Pro_pic.jpg">
+                            <span class="d-none d-md-block dropdown-toggle ps-2">Chanuka Weerakkody</span>
+                        </a><!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            <li class="dropdown-header">
+                                <h6>Chanuka Weerakkody</h6>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                    <i class="bi bi-house"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+
+                        </ul><!-- End Profile Dropdown Items -->
+                    </li><!-- End Profile Nav -->
+
+                </ul>
+            </nav><!-- End Icons Navigation -->
+        </header>
+
+        <!----------------------------------------------------SIDEBAR FORM--------------------------------------->
+        <aside class="sidebar" id="sidebar">
+
+            <ul class="sidebar-nav" id="sidebar-nav">
+
+                <!-- Start Dashboard Page Nav -->
+                <li class="nav-item" id="adDash">
+                    <a class="nav-link ">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+
+                <li class="nav-heading">Pages</li>
+
+                <!-- Start Hotel Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#package-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>Package</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="package-nav">
+                        <li id="adViewPackage">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add Package</span>
+                            </a>
+                        </li>
+                        <li id="adViewPackageView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View Package</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li><!-- End Driver Nav -->
+
+
+            </ul>
+
+        </aside>
+
+        <!----------------------------------------------------DASHBOARD FORM--------------------------------------->
+        <main id="adminDashboard">
+            <main class="main" id="adminDashboardMain">
+
+                <div class="pagetitle">
+                    <h1>Dashboard</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="asserts/pages/index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div><!-- End Page Title -->
+
+                <section class="section dashboard">
+                    <div class="row">
+
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <!-- Booking Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card sales-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Guide <span>| Available Guides</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-book-bookmark"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>100</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Sales Card -->
+
+                                <!-- Income Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Income <span>| This Month</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-money-check"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>LKR 3,264</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Income Card -->
+
+                                <!-- Customers Card -->
+                                <div class="col-xxl-4 col-xl-12">
+
+                                    <div class="card info-card customers-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Register Users</h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-people"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>1244</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div><!-- End Customers Card -->
+
+                                <!-- Driver Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total Driver <span>| Available Drivers</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-people-group"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>30</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Driver Card -->
+
+                                <!-- Car Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total Vehicle <span>| Available Vehicles</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-car-rear"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>40</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div><!-- End Car Card -->
+
+                                <!-- Maintenance Card -->
+                                <div class="col-xxl-4 col-md-6">
+                                    <div class="card info-card revenue-card">
+
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hotel Bookings </h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="fa-solid fa-car-burst"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>5</h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Maintenance Card -->
+
+                            </div>
+                        </div><!-- End Left side columns -->
+                    </div>
+                </section>
+
+            </main><!-- End #main -->
+        </main>
+
+    </main>
+
+    <!----------------------------------------------------LOGIN FORM--------------------------------------->
+    <main id="spaAdminMainLogIn">
+        <main>
+            <div class="container">
+                <section
+                        class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                                <div class="d-flex justify-content-center py-4">
+                                    <a class="logo d-flex align-items-center w-auto" href="asserts/pages/index.html">
+                                        <img alt="" src="asserts/image/Next_travel_Logo.png">
+                                        <span class="d-none d-lg-block">NEXT TRAVEL</span>
+                                    </a>
+                                </div><!-- End Logo -->
+
+
+                                <form id="loginForm" class="form-outline mb-4 card mb-3 card-body pt-4 pb-2">
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                        <p class="text-center small">Enter your username & password to login</p>
+                                    </div>
+
+                                    <div class="form-group col-md-14 mb-3">
+                                        <select aria-label="Default select example" class="form-select mb-3"
+                                                id="category">
+                                            <option disabled selected value="">Category</option>
+                                            <option value="Vehicle">Vehicle</option>
+                                            <option value="Guide">Guide</option>
+                                            <option value="Hotel">Hotel</option>
+                                            <option value="Package">Package</option>
+                                        </select>
+                                    </div>
+
+                                    <input class="form-control" id="username" placeholder="Email or Username" type="text" name="checkUsername" required>
+                                    <br>
+
+
+                                    <input class="form-control" id="password" placeholder="Password" type="text" name="checkPassword" required>
+                                    <br>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="rememberMe" name="remember"
+                                                   type="checkbox"
+                                                   value="true">
+                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Log In</button>
+
+
+                                    <div class="text-center mb-3">
+
+                                        <div class="loginSource">
+                                            <button type="button" class="btn btn-link btn-floating mx-1" >
+                                                <i class='bx bxl-facebook-circle' ></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-google'></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-twitter' ></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-github' ></i>
+                                            </button>
+                                            <p class="textColour" >Sign in with</p>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                <div class="credits">
+                                    Designed by <a href="https://github.com/ChanukaWeerakkody">Chanuka Weerakkody</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </main><!-- End #main -->
+    </main>
+
+    <!----------------------------------------------------PACKAGE FORM--------------------------------------->
+    <main id="adminAddPackage">
+        <main class="main" id="adminPackageAdd">
+
+            <div class="container">
+                <section
+                        class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                                <div class="card mb-3">
+
+                                    <div class="card-body">
+
+                                        <div class="pt-4 pb-2">
+                                            <h5 class="card-title text-center pb-0 fs-4">Add Package</h5>
+                                        </div>
+
+
+
+                                        <form class="row g-3" name="form1">
+                                            <div class="row align-items-center pt-3">
+                                                <div class="col-12 mt-2">
+                                                    <div class="table-responsive" style="height: 70vh;">
+                                                        <table class="table table-primary table-striped">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Hotel Name</th>
+                                                                <th>Email</th>
+                                                                <th>Contact Number</th>
+                                                                <th>Price per Day</th>
+                                                                <th>Pet</th>
+                                                                <th>Location</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody id="chooseHotelTB">
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupNFP">
+                                                    <label class="form-label" for="update-package-hotelName">Hotel Name</label>
+                                                    <input class="form-control" id="update-package-hotelName"  type="text" name="hotelName">
+                                                    <span class="control-error" id="lblVDailyRatess"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupMRT">
+                                                    <label class="form-label" for="update-package-email">Email</label>
+                                                    <input class="form-control" id="update-package-email" type="text" name="email">
+                                                    <span class="control-error" id="lblDmCostss"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupNFP">
+                                                    <label class="form-label" for="update-package-contact">Contact Number</label>
+                                                    <input class="form-control" id="update-package-contact"
+                                                           type="text" name="contactNumber">
+                                                    <span class="control-error" id="lblVLastss"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupFT">
+                                                    <label class="form-label" for="update-package-price">Price Per Day</label>
+                                                    <input class="form-control" id="update-package-price"
+                                                           type="text" name="price">
+                                                    <span class="control-error" id="lblVFreess"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupFT">
+                                                    <label class="form-label" for="update-package-pet">Pet Or No</label>
+                                                    <input class="form-control" id="update-package-pet"
+                                                           type="text" name="pet">
+                                                    <span class="control-error" id="lblVFreesss"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <div class="form-groupFT">
+                                                    <label class="form-label" for="update-package-location">Location</label>
+                                                    <input class="form-control" id="update-package-location"
+                                                           type="text" name="location">
+                                                    <span class="control-error" id="lblVFreessss"></span>
+                                                </div>
+                                            </div>
+
+                                            <hr style="border: black 2px solid">
+
+
+
+
+                                            <!--Package Category-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <select aria-label="Default select example" class="form-select mb-3"
+                                                        id="save-hotel-category" name="category">
+                                                    <option disabled selected value="">Select Category</option>
+                                                    <option value="Regular">Regular</option>
+                                                    <option value="Mid-Level">Mid-Level</option>
+                                                    <option value="Luxury">Luxury</option>
+                                                    <option value="Super-Luxury">Super-Luxury</option>
+                                                </select>
+                                            </div>
+
+                                            <!--Area-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <select aria-label="Default select example" class="form-select mb-3"
+                                                        id="save-hotel-ares" name="travelArea">
+                                                    <option disabled selected value="">Select Travel Area</option>
+                                                    <option value="Kandy and Upcountry">Kandy and Upcountry</option>
+                                                    <option value="Eastern Coast">Eastern Coast</option>
+                                                    <option value="Capital Colombo">Capital Colombo</option>
+                                                    <option value="Western Coast">Western Coast</option>
+                                                    <option value="North Peninsula">North Peninsula</option>
+                                                    <option value="Down South">Down South</option>
+                                                    <option value="Sigiriya and Dambulla">Sigiriya and Dambulla</option>
+                                                    <option value="Anuradhapura and Polonnaruwa">Anuradhapura and Polonnaruwa</option>
+                                                    <option value="Matale">Matale</option>
+                                                </select>
+                                            </div>
+
+                                            <!--adults-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="new_package_adults"
+                                                       name="noOfAdults"
+                                                       placeholder="No of Adults" type="text">
+                                            </div>
+
+                                            <!--Children-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-package-childs" name="noOfChild"
+                                                       placeholder="No of Children" type="text">
+                                            </div>
+
+                                            <!--Total-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-package-totalCount" name="totalCount"
+                                                       placeholder="Total Count" type="text">
+                                            </div>
+
+
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
+
+
+                                            <!--Add btn-->
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100" id="btnAdminAddPackage" type="button">Add
+                                                    Package
+                                                </button>
+                                            </div>
+
+                                        </form>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </main>
+    </main>
+
+    <!----------------------------------------------------PACKAGE VIEW FORM--------------------------------------->
+    <main id="spaAdminViewPackage">
+        <main class="main" id="adminViewPackageSpa">
+
+            <div class="pagetitle">
+                <h1>View Package</h1>
+            </div><!-- End Page Title -->
+
+            <form id="guideViewForm" style="margin-left: 5px; margin-top: 44px;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupCF">
+                            <label class="form-label" for="update-package-Id">Package Id</label>
+                            <input class="form-control" disabled id="update-package-Id"
+                                   type="text">
+                            <span class="control-error" id="lblVRegs"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-package-hotelNameView">Hotel Name</label>
+                            <input class="form-control" id="update-package-hotelNameView"  type="text">
+                            <span class="control-error" id="lblVDailyRates"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupMRT">
+                            <label class="form-label" for="update-package-emailView">Email</label>
+                            <input class="form-control" id="update-package-emailView" type="text">
+                            <span class="control-error" id="lblDmCosts"></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <br>
+
+
+                <div class="row">
+
+                    <div class="col-sm-4" id="uploadUBFF">
+                        <label class="form-label" for="update-package-categoryView">Hotel Category</label>
+                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
+                                id="update-package-categoryView">
+                            <option disabled selected value="">Select Category</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Mid level">Mid level</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Super Luxury">Super Luxury</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-package-contactView">Contact Number</label>
+                            <input class="form-control" id="update-package-contactView"
+                                   type="text">
+                            <span class="control-error" id="lblVLasts"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupFT">
+                            <label class="form-label" for="update-package-priceView">Price Per Day</label>
+                            <input class="form-control" id="update-package-priceView"
+                                   type="text">
+                            <span class="control-error" id="lblVFrees"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-package-adultView">No of Adult</label>
+                            <input class="form-control" id="update-package-adultView"  type="text">
+                            <span class="control-error" id="lblVDailyRatesh"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-package-childView">No of Child</label>
+                            <input class="form-control" id="update-package-childView"  type="text">
+                            <span class="control-error" id="lblVDailyRatesss"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupMRT">
+                            <label class="form-label" for="update-package-totalView">Total Count</label>
+                            <input class="form-control" id="update-package-totalView" type="text">
+                            <span class="control-error" id="lblDmCostsss"></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <br>
+                <br>
+            </form>
+
+            <div class="row">
+                <div class="col-sm-3" style="margin-left: 9px">
+                    <button class="btn btn-primary" id="btnUpdatePackage"
+                            style="background-color: navy;color: white; border: none">Update
+                    </button>
+                </div>
+
+                <div class="col-sm-3" style="margin-left: -152px">
+                    <button class="btn btn-primary" id="btnDeletePackage"
+                            style="background-color: orangered;color: white; border: none">Delete
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 70vh;">
+                        <table class="table table-primary table-striped">
+                            <thead>
+                            <tr>
+                                <th>Package Id</th>
+                                <th>Hotel Name</th>
+                                <th>Email</th>
+                                <th>Category</th>
+                                <th>Contact Number</th>
+                                <th>Price per Day</th>
+                                <th>No of Adults</th>
+                                <th>No of Child</th>
+                                <th>Total Count</th>
+                            </tr>
+                            </thead>
+                            <tbody id="hotelViewTB">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </main><!-- End #main -->
+    </main>
+
+    <script src="asserts/js/jquery-3.6.1.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="asserts/vendor/aos/aos.js"></script>
+    <script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+    <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
+    <script src="asserts/js/controller/PackageAdmin.js"></script>
+    <script src="asserts/js/controller/PackageController.js"></script>
+    <script src="asserts/js/controller/HotelController.js"></script>
+
+</body>
+</html>
