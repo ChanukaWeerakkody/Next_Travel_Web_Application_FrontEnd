@@ -1,6 +1,6 @@
 var baseurlPackage = "http://localhost:8080/";
 
-
+//Add Package
 $("#btnAdminAddPackage").click(function (){
 
     let packageId=$("#new_package_id").val();
@@ -45,10 +45,10 @@ $("#btnAdminAddPackage").click(function (){
         contentType: "application/json",
         data:jPackage,
         success:function (res){
-            if (resp.status == 200) {
-                alert("Saved successfully!");
+            if (res.status === 200) {
+                alert(res.message)
             } else {
-                alert(res.data)
+                alert('Added Successfully!');
             }
         },
 
@@ -61,6 +61,58 @@ $("#btnAdminAddPackage").click(function (){
     })
 });
 
+//Update Package
+$("#btnUpdatePackage").click(function () {
+    let packageId=$("#update-package-Id").val();
+
+    let hotelName=$("#update-package-hotelNameView").val();
+    let hotelEmail=$("#update-package-emailView").val();
+    let contactNumber=$("#update-package-contactView").val();
+    let price=$("#update-package-priceView").val();
+    let pet=$("#update-package-petUpdate").val();
+
+    let location=$("#update-package-locationUpdate").val();
+    let category=$("#update-package-categoryView").val();
+    let travelArea=$("#update-package-travelAreaUpdate").val();
+    let noOfAdults=$("#update-package-adultView").val();
+    let noOfChild=$("#update-package-childView").val();
+    let totalCount=$("#update-package-totalView").val();
+    let packagePrice=$("#update-package-priceUpdate").val();
+
+    var packageView={
+        packageId:packageId,
+        hotelName:hotelName,
+        email:hotelEmail,
+        contactNumber:contactNumber,
+        price:price,
+        pet:pet,
+        location:location,
+        category:category,
+        travelArea:travelArea,
+        noOfAdults:noOfAdults,
+        noOfChild:noOfChild,
+        totalCount:totalCount,
+        packagePrice:packagePrice,
+    }
+
+    $.ajax({
+        url: baseurlPackage + "package",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(packageView),
+        success: function (res) {
+            // viewCars();
+            /*loadCars("allCarDetail");*/
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Updated!');
+                /*clearCarTextUpdate();*/
+            }
+        }
+
+    });
+});
 
 function bindClickEventsChooseHotel(){
     $("#chooseHotelTB>tr").click(function (){
@@ -96,6 +148,10 @@ function bindClickEventsViewHotel(){
         let noOfAdults=$(this).children().eq(6).text();
         let noOfChild=$(this).children().eq(7).text();
         let totalCount=$(this).children().eq(8).text();
+        let location=$(this).children().eq(9).text();
+        let fullPrice=$(this).children().eq(10).text();
+        let pet=$(this).children().eq(11).text();
+        let travelArea=$(this).children().eq(12).text();
 
         $("#update-package-Id").val(packageId);
         $("#update-package-hotelNameView").val(hotelName1);
@@ -106,6 +162,10 @@ function bindClickEventsViewHotel(){
         $("#update-package-adultView").val(noOfAdults);
         $("#update-package-childView").val(noOfChild);
         $("#update-package-totalView").val(totalCount);
+        $("#update-package-locationUpdate").val(location);
+        $("#update-package-priceUpdate").val(fullPrice);
+        $("#update-package-petUpdate").val(pet);
+        $("#update-package-travelAreaUpdate").val(travelArea);
 
     });
 }
@@ -121,7 +181,8 @@ function loadAllHotels(){
         success:function (resp){
             for(const package of resp.data){
                 let row = `<tr><td>${package.packageId}</td><td>${package.hotelName}</td><td>${package.email}</td><td>${package.category}</td>
-                <td>${package.contactNumber}</td><td>${package.packagePrice}</td><td>${package.noOfAdults}</td><td>${package.noOfChild}</td><td>${package.totalCount}</td></tr>`;
+                <td>${package.contactNumber}</td><td>${package.packagePrice}</td><td>${package.noOfAdults}</td><td>${package.noOfChild}</td>
+                <td>${package.totalCount}</td><td>${package.location}</td><td>${package.price}</td><td>${package.pet}</td><td>${package.travelArea}</td></tr>`;
                 $("#hotelViewTB").append(row);
             }
             bindClickEventsViewHotel();
@@ -146,7 +207,30 @@ function loadAllHotelsView(){
     })
 }
 
+//Delete Package
+$("#btnDeletePackage").click(function (){
+    let packageIdNew= $("#update-package-Id").val();
+    console.log(packageIdNew);
+    $.ajax({
+        url:baseurlPackage+"package"+"?packageId="+packageIdNew,
+        method:"DELETE",
 
+        success:function (res){
+            console.log(res);
+
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Deleted!');
+            }
+        },
+        error:function (ob,status,t){
+            console.log(ob);
+            console.log(status);
+            console.log(t);
+        }
+    })
+});
 
 
 

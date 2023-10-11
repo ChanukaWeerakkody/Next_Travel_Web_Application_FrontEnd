@@ -349,6 +349,7 @@ $('#adViewPackageView').click(function () {
 
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
+    $('#guideViewForm2').css('display','none');
 })
 
 /*customer*/
