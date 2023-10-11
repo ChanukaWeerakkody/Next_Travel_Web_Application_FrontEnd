@@ -23,6 +23,7 @@ function addVehicle() {
     let sideFileNameV = $(".sideView")[0].files[0].name;
     let interiorFileNameV = $(".interior")[0].files[0].name;
 
+    let vehicleId = $("#new_vehicle_id").val();
     let brand = $("#new_vehicle_brand").val();
     let subName = $("#new_vehicle_name").val();
     let type = $("#save-vehicle-type").val();
@@ -34,6 +35,7 @@ function addVehicle() {
     let model = $("#save-vehicle-model").val();
 
 
+
     let imageV1 = frontFileNameV;
     let imageV2 = backFileNameV;
     let imageV3 = sideFileNameV;
@@ -42,6 +44,7 @@ function addVehicle() {
 
 
     var vehicleDTO = {
+        vehicleId:vehicleId,
         brand:brand,
         subName:subName,
         type:type,
@@ -92,7 +95,7 @@ loadAllVehicles();
 function bindClickEventsVehicles(){
     $("#vehicleTB>tr").click(function (){
         let vehicleId=$(this).children().eq(0).text();
-        let brand=$(this).children().eq(1).text();
+        let subName=$(this).children().eq(1).text();
         let pata=$(this).children().eq(2).text();
         let type=$(this).children().eq(3).text();
         let category=$(this).children().eq(4).text();
@@ -102,7 +105,7 @@ function bindClickEventsVehicles(){
         let model=$(this).children().eq(8).text();
 
         $("#update-vehicle-Id").val(vehicleId);
-        $("#update-vehicle-brand").val(brand);
+        $("#update-vehicle-brand").val(subName);
         $("#updatePata").val(pata);
         $("#update-vehicle-type").val(type);
         $("#update-vehicle-category").val(category);
@@ -122,7 +125,7 @@ function loadAllVehicles(){
         method: "GET",
         success:function (resp){
             for(const vehicle of resp.data){
-                let row = `<tr><td>${vehicle.id}</td><td>${vehicle.brand}</td><td>${vehicle.pata}</td><td>${vehicle.type}</td>
+                let row = `<tr><td>${vehicle.vehicleId}</td><td>${vehicle.subName}</td><td>${vehicle.pata}</td><td>${vehicle.type}</td>
 <td>${vehicle.category}</td><td>${vehicle.transmission}</td><td>${vehicle.seatCapacity}</td><td>${vehicle.fuelType}</td><td>${vehicle.model}</td></tr>`;
                 $("#vehicleTB").append(row);
             }

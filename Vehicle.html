@@ -399,6 +399,18 @@
 
                                         <form class="row g-3" name="form1">
 
+                                            <!--Id-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="new_vehicle_id"
+                                                       name="vehicleId"
+                                                       placeholder="Vehicle Id" type="text">
+                                            </div>
+
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
+
                                             <!--Brand-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
@@ -710,5 +722,10 @@
     <script src="asserts/js/controller/VehicleAdminController.js"></script>
     <script src="asserts/js/controller/VehicleController.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $("#new_vehicle_id").hide();
+        });
+    </script>
 </body>
 </html>

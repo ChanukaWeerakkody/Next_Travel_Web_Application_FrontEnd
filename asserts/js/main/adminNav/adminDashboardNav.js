@@ -275,6 +275,7 @@ $('#adViewGuide').click(function () {
 
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
+    $('#guideViewForm2').css('display','none');
 })
 
 /*View Guide*/
@@ -299,6 +300,7 @@ $('#adViewGuideView').click(function () {
 
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
+    $('#guideViewForm2').css('display','none');
 })
 
 /*Add Package*/

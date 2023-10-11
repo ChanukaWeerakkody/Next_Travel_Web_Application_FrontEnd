@@ -3,6 +3,7 @@ var baseurlHotel = "http://localhost:8080/";
 //save Hotel
 $("#btnAdminAddHotel").click(function (){
     let hotel={
+        hotelId:$("#save-hotel-id").val(),
         hotelName:$("#save-hotel-name").val(),
         category:$("#save-hotel-category").val(),
         address:$("#new_hotel_address").val(),
@@ -69,7 +70,7 @@ function loadAllVehicles(){
         method: "GET",
         success:function (resp){
             for(const hotel of resp.data){
-                let row = `<tr><td>${hotel.id}</td><td>${hotel.hotelName}</td><td>${hotel.category}</td><td>${hotel.email}</td><td>${hotel.contactNumber1}</td><td>${hotel.priceHotel}</td></tr>`;
+                let row = `<tr><td>${hotel.hotelId}</td><td>${hotel.hotelName}</td><td>${hotel.category}</td><td>${hotel.email}</td><td>${hotel.contactNumber1}</td><td>${hotel.priceHotel}</td></tr>`;
                 $("#hotelTB").append(row);
             }
             bindClickEventsHotel();

@@ -3,7 +3,7 @@ var baseurlPackage = "http://localhost:8080/";
 
 $("#btnAdminAddPackage").click(function (){
 
-
+    let packageId=$("#new_package_id").val();
     let hotelName=$("#update-package-hotelName").val();
         let hotelEmail=$("#update-package-email").val();
 
@@ -16,10 +16,11 @@ $("#btnAdminAddPackage").click(function (){
         let noOfAdults=$("#new_package_adults").val();
         let noOfChild=$("#save-package-childs").val();
         let totalCount=$("#save-package-totalCount").val();
+        let packagePrice=$("#save-package-packagePrice").val();
 
 
     let package={
-
+        packageId:packageId,
         hotelName:hotelName,
         email:hotelEmail,
         contactNumber:contactNumber,
@@ -31,6 +32,7 @@ $("#btnAdminAddPackage").click(function (){
         noOfAdults:noOfAdults,
         noOfChild:noOfChild,
         totalCount:totalCount,
+        packagePrice:packagePrice,
     }
 
     let jPackage =JSON.stringify(package);
@@ -118,8 +120,8 @@ function loadAllHotels(){
         method: "GET",
         success:function (resp){
             for(const package of resp.data){
-                let row = `<tr><td>${package.id}</td><td>${package.hotelName}</td><td>${package.email}</td><td>${package.category}</td>
-                <td>${package.contactNumber}</td><td>${package.price}</td><td>${package.noOfAdults}</td><td>${package.noOfChild}</td><td>${package.totalCount}</td></tr>`;
+                let row = `<tr><td>${package.packageId}</td><td>${package.hotelName}</td><td>${package.email}</td><td>${package.category}</td>
+                <td>${package.contactNumber}</td><td>${package.packagePrice}</td><td>${package.noOfAdults}</td><td>${package.noOfChild}</td><td>${package.totalCount}</td></tr>`;
                 $("#hotelViewTB").append(row);
             }
             bindClickEventsViewHotel();

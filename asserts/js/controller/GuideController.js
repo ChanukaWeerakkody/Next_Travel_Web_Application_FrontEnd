@@ -4,6 +4,7 @@ $("#btnAdminAddGuide").click(function () {
     addGuide();
 })
 
+//Save Guide
 function addGuide() {
     var vData = new FormData();
 
@@ -25,6 +26,7 @@ function addGuide() {
     let interiorFileName = $(".BackViewGuideId")[0].files[0].name;
     let guideImageFileName = $(".guideImage")[0].files[0].name;
 
+    let guideId=$("save-guide-id").val();
     let name = $("#save-guide-name").val();
     let address = $("#new_guide_address").val();
     let age = $("#save-guide-age").val();
@@ -42,6 +44,7 @@ function addGuide() {
 
 
     var carDTO = {
+        guideId:guideId,
         fullName:name,
         address:address,
         age:age,
@@ -75,15 +78,15 @@ function addGuide() {
         data: vData,
         success: function (resp) {
             if (resp.status === 200) {
-                alert(resp.message);
-
+                alert(res.message)
+            } else {
+                alert('Added Successfully!');
             }
         },
         error: function (error) {
             console.log(error);
         }
     })
-
 }
 
 //Bind events
@@ -95,6 +98,13 @@ function bindClickEventsGuides(){
         let age=$(this).children().eq(3).text();
         let contactNumber=$(this).children().eq(4).text();
         let price=$(this).children().eq(5).text();
+        let experience=$(this).children().eq(6).text();
+        let gender=$(this).children().eq(7).text();
+        let image1=$(this).children().eq(8).text();
+        let image2=$(this).children().eq(9).text();
+        let image3=$(this).children().eq(10).text();
+        let image4=$(this).children().eq(11).text();
+        let image5=$(this).children().eq(12).text();
 
         $("#update-guide-Id").val(guideId);
         $("#update-guide-fullName").val(fullName);
@@ -102,6 +112,13 @@ function bindClickEventsGuides(){
         $("#update-guide-age").val(age);
         $("#update-guide-contact").val(contactNumber);
         $("#update-guide-price").val(price);
+        $("#update-guide-experience").val(experience);
+        $("#update-guide-gender").val(gender);
+        $("#guideImageUpdate").val(image1);
+        $("#frontViewNicUpdate").val(image2);
+        $("#backViewNicUpdate").val(image3);
+        $("#frontViewGuideIdUpdate").val(image4);
+        $("#BackViewGuideIdUpdate").val(image5);
 
     });
 }
@@ -115,7 +132,7 @@ function loadAllGuides(){
         method: "GET",
         success:function (resp){
             for(const guide of resp.data){
-                let row = `<tr><td>${guide.id}</td><td>${guide.fullName}</td><td>${guide.address}</td><td>${guide.age}</td><td>${guide.contactNumber}</td><td>${guide.price}</td></tr>`;
+                let row = `<tr><td>${guide.guideId}</td><td>${guide.fullName}</td><td>${guide.address}</td><td>${guide.age}</td><td>${guide.contactNumber}</td><td>${guide.price}</td><td>${guide.experience}</td><td>${guide.gender}</td><td>${guide.image1}</td><td>${guide.image2}</td><td>${guide.image3}</td><td>${guide.image4}</td><td>${guide.image5}</td></tr>`;
                 $("#itemTB").append(row);
             }
             bindClickEventsGuides();
@@ -123,65 +140,93 @@ function loadAllGuides(){
     })
 }
 
+//Update Guide
+$("#btnUpdateGuide").click(function () {
+    let guideId=$("#update-guide-Id").val();
+    let name=$("#update-guide-fullName").val();
+    let address=$("#update-guide-address").val();
+    let age=$("#update-guide-age").val();
+    let contact=$("#update-guide-contact").val();
+    let price=$("#update-guide-price").val();
+    let experience=$("#update-guide-experience").val();
+    let gender=$("#update-guide-gender").val();
+    let image1=$("#guideImageUpdate").val();
+    let image2=$("#frontViewNicUpdate").val();
+    let image3=$("#backViewNicUpdate").val();
+    let image4=$("#frontViewGuideIdUpdate").val();
+    let image5=$("#BackViewGuideIdUpdate").val();
 
+    var guideView={
+        guideId:guideId,
+        fullName: name,
+        address:address,
+        age:age,
+        contactNumber: contact,
+        price:price,
+        experience:experience,
+        gender:gender,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function uploadCarImages(registrationNum) {
-    alert("save Image ")
-
-    let frontViewFile = $("#save-car-frontView")[0].files[0];
-    let backViewFile = $("#save-car-backView")[0].files[0];
-    let sideViewFile = $("#save-car-sideView")[0].files[0];
-    let interiorViewFile = $("#save-car-interior")[0].files[0];
-
-    let frontFileName = registrationNum + "-image1-" + $("#save-car-frontView")[0].files[0].name;
-    let backFileName = registrationNum + "-image2-" + $("#save-car-backView")[0].files[0].name;
-    let sideFileName = registrationNum + "-image3-" + $("#save-car-sideView")[0].files[0].name;
-    let interiorFileName = registrationNum + "-image4-" + $("#save-car-interior")[0].files[0].name;
-
-    console.log("save car front : " + $("#save-car-frontView")[0].files[0]);
-
-    var data = new FormData();
-
-    data.append("image1", frontViewFile, frontFileName);
-    data.append("image2", backViewFile, backFileName);
-    data.append("image3", sideViewFile, sideFileName);
-    data.append("image4", interiorViewFile, interiorFileName);
+        image1:image1,
+        image2:image2,
+        image3:image3,
+        image4:image4,
+        image5:image5,
+    }
 
     $.ajax({
-        url: baseurl + "car/uploadImg/" + registrationNum,
-        method: "Post",
-        async: true,
-        contentType: false,
-        processData: false,
-        data: data,
+        url: baseurlGuide + "guide",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(guideView),
         success: function (res) {
-            console.log("Uploaded");
-        },
-        error: function (error) {
-            let errorReason = JSON.parse(error.responseText);
+            // viewCars();
+            /*loadCars("allCarDetail");*/
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Updated!');
+                /*clearCarTextUpdate();*/
+            }
         }
+
     });
-}
-*/
+});
+
+//Delete Guide
+$("#btnDeleteGuide").click(function (){
+    let guideIdNew= $("#update-guide-Id").val();
+    console.log(guideIdNew);
+    $.ajax({
+        url:baseurlGuide+"guide"+"?guideId="+guideIdNew,
+        method:"DELETE",
+
+        success:function (res){
+            console.log(res);
+
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Deleted!');
+
+            }
+
+        },
+        error:function (ob,status,t){
+            console.log(ob);
+            console.log(status);
+            console.log(t);
+        }
+    })
+});
+
+
+
+
+
+
+
+
+
 
 
 

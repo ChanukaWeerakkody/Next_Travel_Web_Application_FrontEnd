@@ -471,6 +471,16 @@
 
                                         <form class="row g-3" name="form1">
 
+                                            <!--Id-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-guide-id" placeholder="Guide Id" name="guideId"
+                                                       type="text">
+                                            </div>
+
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
 
                                             <!--Name-->
                                             <div class="form-group col-md-6 mb-3">
@@ -659,6 +669,81 @@
 
             </form>
 
+
+            <form id="guideViewForm2" style="margin-left: 5px; margin-top: 44px;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Experience </label>
+                            <input class="form-control" id="update-guide-experience"  type="text">
+                            <span class="control-error" id="lblVDailyRatesa"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-gender">Gender </label>
+                            <input class="form-control" id="update-guide-gender"  type="text">
+                            <span class="control-error" id="lblVDailyRatesg"></span>
+                        </div>
+                    </div>
+
+                    <br>
+
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Guide Image</label>
+                            <input class="form-control" id="guideImageUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesadf"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Front View Of NIC</label>
+                            <input class="form-control" id="frontViewNicUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesad"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Back View Of NIC</label>
+                            <input class="form-control" id="backViewNicUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesd"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Front View Of Guide Id</label>
+                            <input class="form-control" id="frontViewGuideIdUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesf"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-guide-experience">Back View Of Guide Id</label>
+                            <input class="form-control" id="BackViewGuideIdUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesfa"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+
+                <br>
+                <br>
+
+            </form>
+
             <div class="row">
                 <div class="col-sm-3" style="margin-left: 9px">
                     <button class="btn btn-primary" id="btnUpdateGuide"
@@ -685,7 +770,14 @@
                                 <th>Address</th>
                                 <th>Age</th>
                                 <th>Contact Number</th>
-                                <th>Price per Day</th>
+                                <th>Price</th>
+                                <th>Experience</th>
+                                <th>Gender</th>
+                                <th>Guide Image</th>
+                                <th>Front NIC</th>
+                                <th>Back NIC</th>
+                                <th>Front GID</th>
+                                <th>Back GID</th>
                             </tr>
                             </thead>
                             <tbody id="itemTB">
@@ -717,5 +809,10 @@
     <script src="asserts/js/controller/GuideAdminController.js"></script>
     <script src="asserts/js/controller/GuideController.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $("#save-guide-id").hide();
+        });
+    </script>
 </body>
 </html>

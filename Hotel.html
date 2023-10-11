@@ -471,7 +471,16 @@
 
                                         <form class="row g-3" name="form1">
 
+                                            <!--Id-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3 "
+                                                       id="save-hotel-id" placeholder="Hotel Name" name="hotelId"
+                                                       type="text">
+                                            </div>
 
+                                            <div class=" col-md-6 mb-3">
+
+                                            </div>
                                             <!--Name-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3 "
@@ -704,5 +713,10 @@
     <script src="asserts/js/controller/HotelAdmin.js"></script>
     <script src="asserts/js/controller/HotelController.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $("#save-hotel-id").hide();
+        });
+    </script>
 </body>
 </html>
