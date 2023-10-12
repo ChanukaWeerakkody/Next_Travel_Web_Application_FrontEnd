@@ -610,9 +610,9 @@
                     </div>
 
                     <div class="col-sm-4" id="uploadUBFF">
-                        <label class="form-label" for="update-vehicle-category">Hotel Category</label>
+                        <label class="form-label" for="update-hotel-category">Hotel Category</label>
                         <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-category">
+                                id="update-hotel-category">
                             <option disabled selected value="">Select Category</option>
                             <option value="2 Star and 3 Star">2 Star and 3 Star</option>
                             <option value="3 Star and 4 Star">3 Star and 4 Star</option>
@@ -656,15 +656,62 @@
 
             </form>
 
+            <form id="hotelViewForm2" style="margin-left: 5px; margin-top: 44px;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupCF">
+                            <label class="form-label" for="update-hotel-locationView">Hotel Location</label>
+                            <input class="form-control" disabled id="update-hotel-locationView"
+                                   type="text">
+                            <span class="control-error" id="lblVRegsq"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-hotel-addressView">Hotel Address</label>
+                            <input class="form-control" id="update-hotel-addressView"  type="text">
+                            <span class="control-error" id="lblVDailyRatesq"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-hotel-contact2View">Hotel Contact 2</label>
+                            <input class="form-control" id="update-hotel-contact2View"  type="text">
+                            <span class="control-error" id="lblVDailyRatesw"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupMRT">
+                            <label class="form-label" for="update-hotel-petView">Pet Or No</label>
+                            <input class="form-control" id="update-hotel-petView" type="text">
+                            <span class="control-error" id="lblDmCostsq"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+
+            </form>
+
+
             <div class="row">
                 <div class="col-sm-3" style="margin-left: 9px">
-                    <button class="btn btn-primary" id="btnUpdateGuide"
+                    <button class="btn btn-primary" id="btnUpdateHotel"
                             style="background-color: navy;color: white; border: none">Update
                     </button>
                 </div>
 
                 <div class="col-sm-3" style="margin-left: -152px">
-                    <button class="btn btn-primary" id="btnDeleteGuide"
+                    <button class="btn btn-primary" id="btnDeleteHotel"
                             style="background-color: orangered;color: white; border: none">Delete
                     </button>
                 </div>
@@ -683,6 +730,10 @@
                                 <th>Email</th>
                                 <th>Contact Number</th>
                                 <th>Price per Day</th>
+                                <th>Google Location</th>
+                                <th>Address</th>
+                                <th>Contact2</th>
+                                <th>Pet Or No</th>
                             </tr>
                             </thead>
                             <tbody id="hotelTB">

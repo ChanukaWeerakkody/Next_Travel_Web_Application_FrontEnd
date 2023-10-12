@@ -200,59 +200,8 @@ $('#adViewHotelView').click(function () {
     $('#spaAdminViewPackage').css('display','none');
 
     $('#adminAddHotel').css('display','none');
+    $('#hotelViewForm2').css('display','none');
 })
-
-/*Add Package*/
-/*
-$('#adViewPackage').click(function () {
-    $('#adminDashboard').css('display','none');
-    $('#adminAddVehicle').css('display','none');
-
-    $('#adminAddHotel').css('display','block');
-
-    $('#adminCustomerVerification').css('display','none');
-    $('#adminRentalVerification').css('display','none');
-    $('#adminViewAllCustomer').css('display','none');
-    $('#spaAdminMainLogIn').css('display','none');
-    $('#spaAdminVehicleSchedule').css('display','none');
-    $('#spaAdminViewVehicle').css('display','none');
-    $('#spaAdminDriverSchedule').css('display','none');
-    $('#spaAdminPayments').css('display','none');
-
-    $('#adminAddGuide').css('display','none');
-    $('#spaAdminViewGuide').css('display','none');
-
-    $('#adminAddPackage').css('display','none');
-    $('#spaAdminViewPackage').css('display','none');
-
-    $('#spaAdminViewHotel').css('display','none')
-
-
-})
-
-// view package
-$('#adViewPackageView').click(function () {
-
-    $('#adminDashboard').css('display','none');
-    $('#adminAddVehicle').css('display','none');
-    $('#adminCustomerVerification').css('display','none');
-    $('#adminRentalVerification').css('display','none');
-    $('#adminDriver').css('display','none');
-    $('#adminViewAllCustomer').css('display','none');
-    $('#spaAdminMainLogIn').css('display','none');
-    $('#spaAdminVehicleSchedule').css('display','none');
-    $('#spaAdminViewHotel').css('display','block')
-    $('#spaAdminDriverSchedule').css('display','none');
-    $('#spaAdminPayments').css('display','none');
-
-    $('#adminAddGuide').css('display','none');
-
-    $('#adminAddPackage').css('display','none');
-    $('#spaAdminViewPackage').css('display','none');
-
-    $('#adminAddHotel').css('display','none');
-})
-*/
 
 /*Add Guide*/
 $('#adViewGuide').click(function () {
@@ -301,6 +250,7 @@ $('#adViewGuideView').click(function () {
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
     $('#guideViewForm2').css('display','none');
+
 })
 
 /*Add Package*/
@@ -350,6 +300,7 @@ $('#adViewPackageView').click(function () {
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
     $('#guideViewForm2').css('display','none');
+
 })
 
 /*customer*/
