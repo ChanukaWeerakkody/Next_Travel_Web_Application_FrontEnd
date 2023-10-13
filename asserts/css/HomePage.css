@@ -1,0 +1,228 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    background: #081b29;
+    color: #ededed;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+#logIn{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+#package{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+#store{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+#hotel{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+#guide{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+#about{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+
+#contact{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+
+.container-fluid button i{
+    color: white;
+    font-size: 2rem;
+}
+#logo{
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: #ededed;
+}
+#cart{
+    font-size: 30px;
+}
+.header.sticky{
+    background: #081b29;
+}
+#navList a{
+    color: #ededed;
+    margin-left: 3.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+#navList a.active{
+    border-bottom: 2px solid #0ecafa;
+}
+#navList a:hover{
+    border-bottom: 2px solid #0ecafa;
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 2rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
+
+#heading{
+    margin-top: 200px;
+    font-size: 4rem;
+    font-weight: 800;
+}
+.container {
+    /*margin-left: 100px;*/
+}
+#description{
+    font-size: 1.2rem;
+}
+.h{
+    width: 60%;
+    height: 7px;
+    border: 0 none;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+}
+
+#tab-register{
+    border: 1px solid blue;
+}
+
+.textColour{
+    color: white;
+}
+.loginSource button i{
+    color: white;
+    font-size: 25px;
+}
+
+.benefits{
+    background: linear-gradient(#212428,#D3D3D3);
+}
+.planYourHoliday{
+    background: linear-gradient(#212428,#D3D3D3);
+}
+.addForHome{
+    height: 300px;
+    background: linear-gradient(#212428,#D3D3D3);
+    margin-left: 0;
+    margin-right: 0;
+}
+#benHead{
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+}
+#planHead{
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+}
+.profile_area{
+    padding: 80px 0;
+}
+.card{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 15px;
+}
+.img1 image{
+    height: 20px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    background-size: cover;
+}
+
+.main_text{
+    padding: 30px 0;
+    text-align: center;
+    color: black;
+}
+.main_text h2{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+.main_text p{
+    font-size: 16px;
+    padding: 0 35px;
+}
+.social a{
+    display: inline-flex;
+    margin: 3rem 1.5rem 3rem 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    height: 2rem;
+    width: 2rem;
+    color: #ABA6BC;
+
+}
+
+.service-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 100px;
+}
+.service-container .services-box{
+    height: 280px;
+    flex: 2 2 30rem;
+    background: #2F2F2F;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .5rem solid #2F2F2F;
+    transition: .3s ease;
+}
+
+.service-container .services-box i{
+    font-size: 2rem;
+}
+/*
+.service-container .services-box:hover{
+    border-color: #0ecafa;
+    transform: scale(1.05);
+}
+*/
