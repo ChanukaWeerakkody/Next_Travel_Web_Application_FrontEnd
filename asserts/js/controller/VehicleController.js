@@ -81,6 +81,7 @@ function addVehicle() {
         success: function (resp) {
             if (resp.status === 200) {
                 alert(resp.message);
+                uploadCarImages(vehicleId);
             }
         },
         error: function (error) {
@@ -136,6 +137,71 @@ function loadAllVehicles(){
 
 
 
+loadAllVehiclesToUser();
+function loadAllVehiclesToUser() {
+    $("#cusLuxCarContainer").empty();
+
+    $.ajax({
+        url: baseurlGuide + "vehicle",
+        method: "GET",
+        success: function (resp) {
+            for (const vehicle of resp.data) {
+                let div = `<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                         data-aos-delay="100">
+                        <div class="icon-box">
+
+                            <!--Title/V Name-->
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/vehicle/" + vehicle.category}
+                                                         style="width: 250px;height: 175px"></i></div>
+                                                          
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <!--Title/V Name-->
+                            <div class="row"style="color: black">
+                                <div class="d-flex justify-content-center">
+                                    <h4 style="font-weight: 600">${vehicle.subName}</h4>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!--Type-->
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${vehicle.fuelType}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${vehicle.transmission}</h6>
+                            </div>
+                            <br>
+                            
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${vehicle.model}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${vehicle.brand}</h6>
+                            </div>
+                            
+                        </div>
+                    </div>`;
+
+                if (vehicle.category === "Luxury") {
+                    $("#cusLuxCarContainer").append(div);
+                } else if (vehicle.category === "Economic") {
+                    $("#cusPremiumCarContainer").append(div);
+                } else if (vehicle.category === "Mid Range") {
+                    $("#cusCarGeneralContainer").append(div);
+                } else if (vehicle.category === "Super Luxury") {
+                    $("#cusCarGeneralContainer").append(div);
+                }
+            }
+        }
+    });
+}
 
 
 

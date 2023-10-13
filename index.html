@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="asserts/css/HomePage.css">
     <link rel="stylesheet" href="asserts/css/LogIn.css">
     <link rel="stylesheet" href="asserts/css/ContactForm.css">
+    <link rel="stylesheet" href="asserts/css/main/carCard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <!--header-->
@@ -172,10 +174,411 @@
         <h1>Package</h1>
     </section>
 
-    <!--Store section-->
-    <section id="store" class="store">
-        <h1>Store</h1>
-    </section>
+
+    <main id="store">
+        <br><br><br>
+        <!-- ======= CarCard Section/Luxury ======= -->
+        <section class="services section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Luxury Cars</h2>
+                    <p>Choose Your Luxury Car For Your Ride</p>
+                </div>
+
+                <!--main flex-->
+                <div class="row">
+                    <!--Cars -->
+                    <div class="d-flex col-xl-10" id="">
+                        <!--divide 2-->
+                        <div class="row" id="cusLuxCarContainer">
+
+                        </div>
+                    </div>
+
+                    <!--Light DropDown-->
+                    <div class="d-flex col-xl-2  justify-content-center align-items-xl-stretch"
+                         style="background: #F7F7F7 ">
+                        <!-- Slid bar -->
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                <h6 class="card-title" >Pick up <span>| Date</span></h6>
+
+                                <div class="news">
+                                    <div class="post-item clearfix mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="lux-car_Store_pickup_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="card-title">Return <span>| Date</span></h6>
+                                    <div class="post-item clearfix mb-4">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="lux-car_Store_Return_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="card-title">Sort By </h5>
+                                    <!--Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+<!--                                            Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" id="carStoreTypeLux">Luxury</a></li>
+                                            <li><a class="dropdown-item" id="carStoreTypePremium">Premium</a></li>
+                                            <li><a class="dropdown-item" id="carStoreTypeGeneral">General</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Brand-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+<!--                                            Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Action two</a></li>
+                                            <li><a class="dropdown-item" href="#">Action three</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Fuel Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+<!--                                            Fuel Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Hybrid</a></li>
+                                            <li><a class="dropdown-item" href="#">Petrol</a></li>
+                                            <li><a class="dropdown-item" href="#">Diesel</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Transmission-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Transmission&nbsp
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Manual</a></li>
+                                            <li><a class="dropdown-item" href="#">Auto</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Passenger-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+<!--                                            Passenger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">4</a></li>
+                                            <li><a class="dropdown-item" href="#">6</a></li>
+                                            <li><a class="dropdown-item" href="#">8</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Button-->
+                                    <div class="row mt-5">
+                                        <div class="d-flex align-items-sm-stretch justify-content-around">
+                                            <button class="p-2 goToCartButton">Go to Cart</button>
+                                        </div>
+                                    </div>
+
+                                </div><!-- End sidebar recent posts-->
+                            </div>
+                        </div><!-- Slid Bar -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= CarCard Section/Premium ======= -->
+        <section class="services section-bg" id="sectionMainCarCard">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Premium Cars</h2>
+                    <p>Choose Your Premium Car For Your Ride</p>
+                </div>
+
+                <!--main flex-->
+                <div class="row">
+
+                    <!--Cars -->
+                    <div class="d-flex col-xl-10" id="carStoreMainPremiumContainer">
+                        <!--divide 2-->
+                        <div class="row" id="cusPremiumCarContainer">
+
+
+                        </div>
+                    </div>
+
+
+                    <!--Light DropDown-->
+                    <div class="d-flex col-xl-2  justify-content-center align-items-xl-stretch"
+                         style="background: #F7F7F7 ">
+                        <!-- Slid bar -->
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                <h6 class="card-title" >Pick up <span>| Date</span></h6>
+
+                                <div class="news">
+                                    <div class="post-item clearfix mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="premiumCar_Store_pickup_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="card-title">Return <span>| Date</span></h6>
+                                    <div class="post-item clearfix mb-4">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="premiumCar_Store_Return_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="card-title">Sort By </h5>
+                                    <!--Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Luxury</a></li>
+                                            <li><a class="dropdown-item" href="#">Premium</a></li>
+                                            <li><a class="dropdown-item" href="#">General</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Brand-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Action two</a></li>
+                                            <li><a class="dropdown-item" href="#">Action three</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Fuel Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Fuel Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Hybrid</a></li>
+                                            <li><a class="dropdown-item" href="#">Petrol</a></li>
+                                            <li><a class="dropdown-item" href="#">Diesel</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Transmission-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Transmission&nbsp
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Manual</a></li>
+                                            <li><a class="dropdown-item" href="#">Auto</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Passenger-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Passenger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">4</a></li>
+                                            <li><a class="dropdown-item" href="#">6</a></li>
+                                            <li><a class="dropdown-item" href="#">8</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Button-->
+                                    <div class="row mt-5">
+                                        <div class="d-flex align-items-sm-stretch justify-content-around">
+                                            <button class="p-2 goToCartButton">Go to Cart</button>
+                                        </div>
+                                    </div>
+
+                                </div><!-- End sidebar recent posts-->
+
+                            </div>
+                        </div><!-- Slid Bar -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= CarCard Section/General ======= -->
+        <section class="services section-bg" id="services">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>General Cars</h2>
+                    <p>Choose Your General Car For Your Ride</p>
+                </div>
+
+                <!--main flex-->
+                <div class="row">
+
+                    <!--Cars -->
+                    <div class="d-flex col-xl-10 " id="carStoreMainGeneralContainer">
+                        <!--divide 2-->
+                        <div class="row" id="cusCarGeneralContainer">
+
+
+                        </div>
+                    </div>
+
+
+                    <!--Light DropDown-->
+                    <div class="d-flex col-xl-2  justify-content-center align-items-xl-stretch"
+                         style="background: #F7F7F7 ">
+                        <!-- Slid bar -->
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                <h6 class="card-title" >Pick up <span>| Date</span></h6>
+
+                                <div class="news">
+                                    <div class="post-item clearfix mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="car_Store_pickup_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="card-title">Return <span>| Date</span></h6>
+                                    <div class="post-item clearfix mb-4">
+                                        <div class="form-floating">
+                                            <input class="form-control border-secondary " id="car_Store_Return_date"
+                                                   type="date">
+                                            <label>Date</label>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="card-title">Sort By </h5>
+                                    <!--Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Luxury</a></li>
+                                            <li><a class="dropdown-item" href="#">Premium</a></li>
+                                            <li><a class="dropdown-item" href="#">General</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Brand-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Action two</a></li>
+                                            <li><a class="dropdown-item" href="#">Action three</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Fuel Type-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Fuel Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Hybrid</a></li>
+                                            <li><a class="dropdown-item" href="#">Petrol</a></li>
+                                            <li><a class="dropdown-item" href="#">Diesel</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Transmission-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Transmission&nbsp
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Manual</a></li>
+                                            <li><a class="dropdown-item" href="#">Auto</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Passenger-->
+                                    <div class="dropdown-center mb-2">
+                                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                type="button">
+                                            Passenger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">4</a></li>
+                                            <li><a class="dropdown-item" href="#">6</a></li>
+                                            <li><a class="dropdown-item" href="#">8</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--Button-->
+                                    <div class="row mt-5">
+                                        <div class="d-flex align-items-sm-stretch justify-content-around">
+                                            <button class="p-2 goToCartButton">Go to Cart</button>
+                                        </div>
+                                    </div>
+
+                                </div><!-- End sidebar recent posts-->
+
+                            </div>
+                        </div><!-- Slid Bar -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
 
     <!--Hotel section-->
     <section id="hotel" class="hotel">
@@ -531,6 +934,24 @@
     <!--<script src="asserts/js/Registration.js"></script>-->
     <script src="asserts/js/nav.js"></script>
     <script src="asserts/js/controller/UserController.js"></script>
+    <script src="asserts/js/controller/VehicleController.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="asserts/vendor/aos/aos.js"></script>
+    <script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <script src="asserts/js/main.js"></script>
+    <script src="asserts/js/main/carDetail.js"></script>
+    <script src="asserts/js/main/nav.js"></script>
+    <script src="asserts/js/controller/customerController.js"></script>
+
+    <!--<script src="asserts/js/controller/cartController.js"></script>-->
+
+
 
 
     <script>
