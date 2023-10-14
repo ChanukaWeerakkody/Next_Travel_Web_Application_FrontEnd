@@ -33,6 +33,7 @@ function addVehicle() {
     let seatCapacity = $("#seatCapacity").val();
     let fuelType = $("#save-vehicle-fuelType").val();
     let model = $("#save-vehicle-model").val();
+    let pricePerKM = $("#pricePerKM").val();
 
 
 
@@ -54,6 +55,7 @@ function addVehicle() {
         seatCapacity:seatCapacity,
         fuelType:fuelType,
         model:model,
+        pricePerKM:pricePerKM,
 
         image1: "uploads/" + imageV1,
         image2: "uploads/" + imageV2,
@@ -80,8 +82,9 @@ function addVehicle() {
         data: vData1,
         success: function (resp) {
             if (resp.status === 200) {
-                alert(resp.message);
-                uploadCarImages(vehicleId);
+                alert(resp.message)
+            } else {
+                alert('Added Successfully!');
             }
         },
         error: function (error) {
@@ -96,7 +99,7 @@ loadAllVehicles();
 function bindClickEventsVehicles(){
     $("#vehicleTB>tr").click(function (){
         let vehicleId=$(this).children().eq(0).text();
-        let subName=$(this).children().eq(1).text();
+        let brand=$(this).children().eq(1).text();
         let pata=$(this).children().eq(2).text();
         let type=$(this).children().eq(3).text();
         let category=$(this).children().eq(4).text();
@@ -104,9 +107,15 @@ function bindClickEventsVehicles(){
         let seatCapacity=$(this).children().eq(6).text();
         let fuel=$(this).children().eq(7).text();
         let model=$(this).children().eq(8).text();
+        let subName=$(this).children().eq(9).text();
+        let pricePerKM=$(this).children().eq(10).text();
+        let image1=$(this).children().eq(11).text();
+        let image2=$(this).children().eq(12).text();
+        let image3=$(this).children().eq(13).text();
+        let image4=$(this).children().eq(14).text();
 
         $("#update-vehicle-Id").val(vehicleId);
-        $("#update-vehicle-brand").val(subName);
+        $("#update-vehicle-brand").val(brand);
         $("#updatePata").val(pata);
         $("#update-vehicle-type").val(type);
         $("#update-vehicle-category").val(category);
@@ -114,6 +123,12 @@ function bindClickEventsVehicles(){
         $("#update-vehicle-seatCapacity").val(seatCapacity);
         $("#update-vehicle-fuel").val(fuel);
         $("#update-vehicle-model").val(model);
+        $("#update-vehicle-subName").val(subName);
+        $("#update-vehicle-pricePerKM").val(pricePerKM);
+        $("#update-image1").val(image1);
+        $("#update-image2").val(image2);
+        $("#update-image3").val(image3);
+        $("#update-image4").val(image4);
 
     });
 }
@@ -126,14 +141,121 @@ function loadAllVehicles(){
         method: "GET",
         success:function (resp){
             for(const vehicle of resp.data){
-                let row = `<tr><td>${vehicle.vehicleId}</td><td>${vehicle.subName}</td><td>${vehicle.pata}</td><td>${vehicle.type}</td>
-<td>${vehicle.category}</td><td>${vehicle.transmission}</td><td>${vehicle.seatCapacity}</td><td>${vehicle.fuelType}</td><td>${vehicle.model}</td></tr>`;
+                let row = `<tr><td>${vehicle.vehicleId}</td><td>${vehicle.brand}</td><td>${vehicle.pata}</td><td>${vehicle.type}</td>
+                <td>${vehicle.category}</td><td>${vehicle.transmission}</td><td>${vehicle.seatCapacity}</td><td>${vehicle.fuelType}</td>
+                <td>${vehicle.model}</td><td>${vehicle.subName}</td><td>${vehicle.pricePerKM}</td><td>${vehicle.image1}</td>
+                <td>${vehicle.image2}</td><td>${vehicle.image3}</td><td>${vehicle.image4}</td></tr>`;
                 $("#vehicleTB").append(row);
             }
             bindClickEventsVehicles();
         }
     })
 }
+
+
+
+
+
+
+//Update Vehicle
+$("#btnUpdateVehicle").click(function () {
+
+    let vehicleId = $("#update-vehicle-Id").val();
+    let brand = $("#update-vehicle-brand").val();
+    let subName = $("#update-vehicle-subName").val();
+    let type = $("#update-vehicle-type").val();
+    let pata = $("#updatePata").val();
+    let category = $("#update-vehicle-category").val();
+    let transmission = $("#update-vehicle-transmission").val();
+    let seatCapacity = $("#update-vehicle-seatCapacity").val();
+    let fuelType = $("#update-vehicle-fuel").val();
+    let model = $("#update-vehicle-model").val();
+    let pricePerKM = $("#update-vehicle-pricePerKM").val();
+
+
+    let image1=$("#update-image1").val();
+    let image2=$("#update-image2").val();
+    let image3=$("#update-image3").val();
+    let image4=$("#update-image4").val();
+
+
+    var guideView={
+        vehicleId:vehicleId,
+        brand:brand,
+        subName:subName,
+        type:type,
+        pata:pata,
+        category:category,
+        transmission:transmission,
+        seatCapacity:seatCapacity,
+        fuelType:fuelType,
+        model:model,
+        pricePerKM:pricePerKM,
+
+        image1:image1,
+        image2:image2,
+        image3:image3,
+        image4:image4,
+    }
+
+    $.ajax({
+        url: baseurlGuide + "vehicle",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(guideView),
+        success: function (res) {
+            // viewCars();
+            /*loadCars("allCarDetail");*/
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Updated!');
+                /*clearCarTextUpdate();*/
+            }
+        }
+
+    });
+});
+
+
+//Delete Vehicle
+$("#btnDeleteVehicle").click(function (){
+    let vehicleIdNew= $("#update-vehicle-Id").val();
+    console.log(vehicleIdNew);
+    $.ajax({
+        url:baseurlGuide+"vehicle"+"?vehicleId="+vehicleIdNew,
+        method:"DELETE",
+
+        success:function (res){
+            console.log(res);
+
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Deleted!');
+
+            }
+
+        },
+        error:function (ob,status,t){
+            console.log(ob);
+            console.log(status);
+            console.log(t);
+        }
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -153,7 +275,7 @@ function loadAllVehiclesToUser() {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/vehicle/" + vehicle.category}
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/" + vehicle.image3}
                                                          style="width: 250px;height: 175px"></i></div>
                                                           
                                 </div>
@@ -174,7 +296,7 @@ function loadAllVehiclesToUser() {
                                 <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
                                     ${vehicle.fuelType}</h6>
                                 <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
-                                    ${vehicle.transmission}</h6>
+                                    ${vehicle.pricePerKM}</h6>
                             </div>
                             <br>
                             
@@ -186,17 +308,23 @@ function loadAllVehiclesToUser() {
                                     ${vehicle.brand}</h6>
                             </div>
                             
+                            <!--Button-->
+                            <div  class="row mt-3 btnClzRent">
+                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
+                                    <button data-dtaImg="${vehicle.image3}"  data-subName="${vehicle.subName}" data-fuelType="${vehicle.fuelType}" data-transmission="${vehicle.transmission}" data-btnRentIt="${vehicle.model}" data-registrationId="${vehicle.vehicleId}"  class="btn_RentIt">RENT IT</button>
+                                </div> 
+                            </div>
                         </div>
                     </div>`;
 
                 if (vehicle.category === "Luxury") {
                     $("#cusLuxCarContainer").append(div);
                 } else if (vehicle.category === "Economic") {
-                    $("#cusPremiumCarContainer").append(div);
+                    $("#cusCarEconomicContainer").append(div);
                 } else if (vehicle.category === "Mid Range") {
-                    $("#cusCarGeneralContainer").append(div);
+                    $("#cusCarMidRangeContainer").append(div);
                 } else if (vehicle.category === "Super Luxury") {
-                    $("#cusCarGeneralContainer").append(div);
+                    $("#cusSupLuxCarContainer").append(div);
                 }
             }
         }

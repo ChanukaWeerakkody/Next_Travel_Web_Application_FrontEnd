@@ -500,8 +500,12 @@
 
 
 
-                                            <div class=" col-md-6 mb-3">
-
+                                            <!--Price Per KM-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="pricePerKM"
+                                                       name="pricePerKM"
+                                                       placeholder="Price Per KM" type="text">
                                             </div>
 
                                             <div class="form-group col-md-6 mb-3">
@@ -641,8 +645,8 @@
                         <select aria-label="form-select-lg example" class="form-select form-select-ls "
                                 id="update-vehicle-fuel">
                             <option>Fuel Type</option>
-                            <option value="Auto">Petrol</option>
-                            <option value="Manual">Diesel</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
                         </select>
                     </div>
 
@@ -655,6 +659,62 @@
                             <option value="Non Hybrid">Non Hybrid</option>
                         </select>
                     </div>
+
+                </div>
+                <br>
+
+            </form>
+
+            <form id="carViewForm2" style="margin-left: 5px; margin-top: 44px;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-groupCF">
+                            <label class="form-label" for="update-vehicle-subName">Sub name</label>
+                            <input class="form-control" disabled id="update-vehicle-subName"
+                                   type="text">
+                            <span class="control-error" id="lblVRega"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-vehicle-pricePerKM">Price Per KM</label>
+                            <input class="form-control" id="update-vehicle-pricePerKM"  type="text">
+                            <span class="control-error" id="lblVDailyRatea"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-groupFT">
+                            <label class="form-label" for="update-image1">Image 1</label>
+                            <input class="form-control" id="update-image1" type="text">
+                            <span class="control-error" id="lblVMonthlyRatea"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row">
+
+                    <div class="form-groupFT">
+                        <label class="form-label" for="update-image2">Image 2</label>
+                        <input class="form-control" id="update-image2" type="text">
+                        <span class="control-error" id="lblVMonthlyRateq"></span>
+                    </div>
+
+                    <div class="form-groupFT">
+                        <label class="form-label" for="update-image3">Image 3</label>
+                        <input class="form-control" id="update-image3" type="text">
+                        <span class="control-error" id="lblVMonthlyRatee"></span>
+                    </div>
+
+                    <div class="form-groupFT">
+                        <label class="form-label" for="update-image4">Image 4</label>
+                        <input class="form-control" id="update-image4" type="text">
+                        <span class="control-error" id="lblVMonthlyRater"></span>
+                    </div>
+                </div>
+                <br>
 
                 </div>
                 <br>
@@ -691,6 +751,12 @@
                                 <th scope="col">Seat Capacity</th>
                                 <th scope="col">Fuel Type</th>
                                 <th scope="col">Model</th>
+                                <th scope="col">Sub name</th>
+                                <th scope="col">Price Per KM</th>
+                                <th scope="col">F Image</th>
+                                <th scope="col">B Image</th>
+                                <th scope="col">R Image</th>
+                                <th scope="col">L Image</th>
                             </tr>
                             </thead>
                             <tbody id="vehicleTB">

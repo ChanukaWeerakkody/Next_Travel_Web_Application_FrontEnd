@@ -150,6 +150,7 @@ $('#adViewVehicleView').click(function () {
 
     $('#spaAdminViewHotel').css('display','none');
     $('#adminAddHotel').css('display','none');
+    $('#carViewForm2').css('display','none');
 
 })
 
