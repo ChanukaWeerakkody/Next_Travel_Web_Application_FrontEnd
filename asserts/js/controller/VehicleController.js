@@ -152,11 +152,6 @@ function loadAllVehicles(){
     })
 }
 
-
-
-
-
-
 //Update Vehicle
 $("#btnUpdateVehicle").click(function () {
 

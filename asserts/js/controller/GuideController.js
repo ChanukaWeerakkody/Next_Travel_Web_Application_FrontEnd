@@ -223,6 +223,68 @@ $("#btnDeleteGuide").click(function (){
 
 
 
+loadAllGuidesToUser();
+function loadAllGuidesToUser() {
+    $("#cusGuideContainer").empty();
+
+    $.ajax({
+        url: baseurlGuide + "guide",
+        method: "GET",
+        success: function (resp) {
+            for (const guide of resp.data) {
+                let div = `<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                         data-aos-delay="100">
+                        <div class="icon-box">
+
+                            <!--Title/V Name-->
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/" + guide.image5}
+                                                         style="width: 250px;height: 175px"></i></div>
+                                                          
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <!--Title/V Name-->
+                            <div class="row"style="color: black">
+                                <div class="d-flex justify-content-center">
+                                    <h4 style="font-weight: 600">${guide.fullName}</h4>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!--Type-->
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${guide.age}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${guide.contactNumber}</h6>
+                            </div>
+                            <br>
+                            
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${guide.gender}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${guide.price}</h6>
+                            </div>
+                            
+                            <!--Button-->
+                            <div  class="row mt-3 btnClzRent">
+                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
+                                    <button data-dtaImg="${guide.image3}"  data-subName="${guide.subName}" data-fuelType="${guide.fuelType}" data-transmission="${guide.transmission}" data-btnRentIt="${guide.model}" data-registrationId="${guide.vehicleId}"  class="btn_RentIt">RENT IT</button>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>`;
+                $("#cusGuideContainer").append(div);
+            }
+        }
+    });
+}
 
 
 
