@@ -1,4 +1,6 @@
 var baseurlGuide = "http://localhost:8080/";
+var vNameAr = [];
+var temporaryOrderStore = {};
 
 $("#btnAdminAddVehicle").click(function () {
     addVehicle();
@@ -85,6 +87,7 @@ function addVehicle() {
                 alert(resp.message)
             } else {
                 alert('Added Successfully!');
+                uploadCarImages(vehicleId);
             }
         },
         error: function (error) {
@@ -242,18 +245,6 @@ $("#btnDeleteVehicle").click(function (){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 loadAllVehiclesToUser();
 function loadAllVehiclesToUser() {
     $("#cusLuxCarContainer").empty();
@@ -270,9 +261,8 @@ function loadAllVehiclesToUser() {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/" + vehicle.image3}
-                                                         style="width: 250px;height: 175px"></i></div>
-                                                          
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/" + vehicle.image1}
+                                                         style="width: 250px;height: 175px"></i></div>                     
                                 </div>
                             </div>
                             <br>
@@ -306,9 +296,12 @@ function loadAllVehiclesToUser() {
                             <!--Button-->
                             <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-dtaImg="${vehicle.image3}"  data-subName="${vehicle.subName}" data-fuelType="${vehicle.fuelType}" data-transmission="${vehicle.transmission}" data-btnRentIt="${vehicle.model}" data-registrationId="${vehicle.vehicleId}"  class="btn_RentIt">RENT IT</button>
-                                </div> 
-                            </div>
+                                    <button data-type="${vehicle.subName}" data-pata="${vehicle.pata}" data-pricePerKM="${vehicle.pricePerKM}" data-btnRentIt="${vehicle.model}" data-vehicleId="${vehicle.vehicleId}"  class="btn_RentIt">RENT IT</button>
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
+                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
+                                </div>
+                            </div>                         
                         </div>
                     </div>`;
 
@@ -322,14 +315,98 @@ function loadAllVehiclesToUser() {
                     $("#cusSupLuxCarContainer").append(div);
                 }
             }
+            rentItClick();
         }
     });
 }
 
+function rentItClick() {
+    const buttons = document.querySelectorAll('.btn_RentIt');
+
+    $(".btn_RentIt").click(function () {
+        alert("Works")
+
+        var bgColor = $(this).css("background-color");
+        console.log(bgColor)
+
+        let attrType = $(this).attr("data-type");
+        let attrPata = $(this).attr("data-pata");
+        let attrPricePerKM = $(this).attr("data-pricePerKM");
+        let attrModel = $(this).attr("data-btnRentIt");
+        let attrVehicleId = $(this).attr("data-vehicleId");
+
+        console.log(attrType,attrPricePerKM,attrPata,attrModel,attrVehicleId);
+
+        setBrandToArray(this);
+
+        if (colorsAreEqual(bgColor, "rgb(68, 68, 68)")) { //firstTime With hover
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
+            $(this).text("Rent It");
+            $(this).css({
+                "background": "#F7F7F7",
+                "color": "#444444",
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(247, 247, 247)")) { //red turn to past value
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        }
+
+    })
 
 
+}
 
+function colorsAreEqual(color1, color2) {
+    var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+    var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+    if (rgb1.length !== 3 || rgb2.length !== 3) {
+        return false;  // Invalid input - not a valid color
+    }
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+            return false;  // The colors are not equal
+        }
+    }
+    return true;  // The colors are equal
+}
+function setBrandToArray(param) {
+    let bool = true;
 
+    var cus = {
+        model: $(param).attr("data-btnRentIt"),
+        type: $(param).attr("data-type"),
+        newPata: $(param).attr("data-pata"),
+        priceKM: $(param).attr("data-pricePerKM"),
+        btnR: param,
+        vehicleId: $(param).attr("data-vehicleId")
+    }
+    console.log(cus);
+
+    temporaryOrderStore={cus};
+
+    if (bool) {;
+        vNameAr.push(cus);
+    } else {
+        for (var i = 0; i < vNameAr.length; i++) {
+            if (vNameAr[i].model === $(param).attr("data-btnRentIt")) {
+                vNameAr.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+}
+function sendVehicleNameToCart() {
+    return vNameAr;
+}
 
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Data to Table Example</title>
+</head>
+<body>
+    <table id="myTable" border="1">
+        <thead>
+        <tr>
+            <th>Model</th>
+            <th>Type</th>
+            <th>New Pata</th>
+            <th>Price per KM</th>
+            <th>Vehicle ID</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">
+        <!-- Table data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        console.log(temporaryOrderStore);
+        console.log(temporaryOrderStore.cus.vehicleId);
+        console.log(temporaryOrderStore.cus.type);
+        let model = temporaryOrderStore.cus.model;
+        console.log(model)
+    </script>
+    <script src="asserts/js/controller/cartController.js"></script>
+    <script src="asserts/js/controller/VehicleController.js"></script>
+</body>
+</html>

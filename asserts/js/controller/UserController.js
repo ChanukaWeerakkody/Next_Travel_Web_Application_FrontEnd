@@ -67,6 +67,7 @@ function addUser() {
                 alert(resp.message)
             } else {
                 alert('Added Successfully!');
+
             }
         },
         error: function (error) {
@@ -93,7 +94,8 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             if (response.status === 200) {
                 // Successful login, redirect or perform desired action
                 alert("Welcome!");
-
+                $("#userCart").css("display","block");
+                $("#logIn").css("display","none");
             } else {
                 // Handle authentication failure
                 alert("Wrong")

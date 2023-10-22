@@ -1,4 +1,6 @@
 var baseurlGuide = "http://localhost:8080/";
+var vNameArGuide = [];
+var temporaryGuideStore = {};
 
 $("#btnAdminAddGuide").click(function () {
     addGuide();
@@ -272,22 +274,108 @@ function loadAllGuidesToUser() {
                                     ${guide.price}</h6>
                             </div>
                             
-                            <!--Button-->
                             <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-dtaImg="${guide.image3}"  data-subName="${guide.subName}" data-fuelType="${guide.fuelType}" data-transmission="${guide.transmission}" data-btnRentIt="${guide.model}" data-registrationId="${guide.vehicleId}"  class="btn_RentIt">RENT IT</button>
+                                    <button data-dtaImg="${guide.image3}"  data-fullName="${guide.fullName}" data-age="${guide.age}" data-contact="${guide.contactNumber}" data-priceDay="${guide.price}" data-guideId="${guide.guideId}"  class="btn_RentItGuide">RENT IT</button>
                                 </div> 
-                            </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
+                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
+                                </div>
+                            </div>  
                         </div>
                     </div>`;
                 $("#cusGuideContainer").append(div);
             }
+            rentItGuideClick();
         }
     });
 }
 
+function rentItGuideClick() {
+    const buttons = document.querySelectorAll('.btn_RentItGuide');
 
+    $(".btn_RentItGuide").click(function () {
+        alert("Works")
 
+        var bgColor = $(this).css("background-color");
+        console.log(bgColor)
+
+        let attrFullName = $(this).attr("data-fullName");
+        let attrAge = $(this).attr("data-age");
+        let attrContact = $(this).attr("data-contact");
+        let attrPrice = $(this).attr("data-priceDay");
+        let attrGuideId = $(this).attr("data-guideId");
+
+        console.log(attrFullName,attrAge,attrContact,attrPrice,attrGuideId);
+
+        setBrandToArrayGuide(this);
+
+        if (colorsAreEqual(bgColor, "rgb(240, 240, 240)")) { //firstTime With hover
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
+            $(this).text("Rent It");
+            $(this).css({
+                "background": "#F7F7F7",
+                "color": "#444444",
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(247, 247, 247)")) { //red turn to past value
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        }
+    })
+}
+function colorsAreEqual(color1, color2) {
+    var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+    var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+    if (rgb1.length !== 3 || rgb2.length !== 3) {
+        return false;  // Invalid input - not a valid color
+    }
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+            return false;  // The colors are not equal
+        }
+    }
+    return true;  // The colors are equal
+}
+
+function setBrandToArrayGuide(param) {
+    let bool = true;
+
+    var guide = {
+        fullName: $(param).attr("data-fullName"),
+        age: $(param).attr("data-age"),
+        contactNumber: $(param).attr("data-contact"),
+        price: $(param).attr("data-priceDay"),
+        btnR: param,
+        guideId: $(param).attr("data-guideId")
+    }
+    console.log(guide);
+
+    temporaryGuideStore={guide};
+
+    if (bool) {;
+        vNameArGuide.push(guide);
+    } else {
+        for (var i = 0; i < vNameArGuide.length; i++) {
+            if (vNameArGuide[i].model === $(param).attr("data-fullName")) {
+                vNameArGuide.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+}
+
+function sendVehicleNameToCart() {
+    return vNameArGuide;
+}
 
 
 

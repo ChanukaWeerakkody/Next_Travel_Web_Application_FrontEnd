@@ -1,4 +1,6 @@
 var baseurlHotel = "http://localhost:8080/";
+var vNameArHotel = [];
+var temporaryHotelStore = {};
 
 //save Hotel
 $("#btnAdminAddHotel").click(function (){
@@ -164,3 +166,175 @@ $("#btnDeleteHotel").click(function (){
         }
     })
 });
+
+
+
+
+
+
+
+
+
+
+
+loadAllHotelToUser();
+function loadAllHotelToUser() {
+    $("#cusSupLuxHotelContainer").empty();
+
+    $.ajax({
+        url: baseurlHotel + "hotel",
+        method: "GET",
+        success: function (resp) {
+            for (const hotel of resp.data) {
+                let div = `<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                         data-aos-delay="100">
+                        <div class="icon-box">
+
+                            <!--Title/V Name-->
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/" + hotel.image5}
+                                                         style="width: 250px;height: 175px"></i></div>
+                                                          
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <!--Title/V Name-->
+                            <div class="row"style="color: black">
+                                <div class="d-flex justify-content-center">
+                                    <h4 style="font-weight: 600">${hotel.hotelName}</h4>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!--Type-->
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${hotel.category}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${hotel.address}</h6>
+                            </div>
+                            <br>
+                            
+                            <div class="row" style="color: black">
+                            <br>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline" >
+                                    ${hotel.contactNumber1}</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    ${hotel.priceHotel}</h6>
+                            </div>
+                            
+                            <div  class="row mt-3 btnClzRent">
+                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
+                                    <button data-dtaName="${hotel.hotelName}"  data-category="${hotel.category}" data-address="${hotel.address}" data-contact="${hotel.contactNumber}" data-priceDay="${hotel.packagePrice}" data-hotelId="${hotel.packageId}"  class="btn_RentItHotel">RENT IT</button>
+                                </div> 
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
+                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
+                                </div>
+                            </div>  
+                        </div>
+                    </div>`;
+
+                if (hotel.category === "5 Star") {
+                    $("#cusSupLuxHotelContainer").append(div);
+                } else if (hotel.category === "4 Star and 5 Star") {
+                    $("#cusLuxHotelContainer").append(div);
+                } else if (hotel.category === "3 Star and 4 Star") {
+                    $("#cusHotelMidRangeContainer").append(div);
+                } else if (hotel.category === "2 Star and 3 Star") {
+                    $("#cusHotelEconomicContainer").append(div);
+                }
+            }
+            rentItHotelClick();
+        }
+    });
+}
+
+function rentItHotelClick() {
+    const buttons = document.querySelectorAll('.btn_RentItHotel');
+
+    $(".btn_RentItHotel").click(function () {
+        alert("Works")
+
+        var bgColor = $(this).css("background-color");
+        console.log(bgColor)
+
+        let attrHotelName = $(this).attr("data-dtaName");
+        let attrCategory = $(this).attr("data-category");
+        let attrContact = $(this).attr("data-contact");
+        let attrPackagePrice = $(this).attr("data-priceDay");
+        let attrHotelId = $(this).attr("data-hotelId");
+
+        console.log(attrHotelName,attrCategory,attrContact,attrPackagePrice,attrHotelId);
+
+        setBrandToArrayPackage(this);
+
+        if (colorsAreEqual(bgColor, "rgb(239, 239, 239)")) { //firstTime With hover
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
+            $(this).text("Rent It");
+            $(this).css({
+                "background": "#F7F7F7",
+                "color": "#444444",
+            });
+        } else if (colorsAreEqual(bgColor, "rgb(247, 247, 247)")) { //red turn to past value
+            $(this).text("Added");
+            $(this).css({
+                "background": "#D50137",
+                "color": "#ffffff"
+            });
+        }
+    })
+}
+
+function colorsAreEqual(color1, color2) {
+    var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+    var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+    if (rgb1.length !== 3 || rgb2.length !== 3) {
+        return false;  // Invalid input - not a valid color
+    }
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+            return false;  // The colors are not equal
+        }
+    }
+    return true;  // The colors are equal
+}
+
+function setBrandToArrayHotel(param) {
+    let bool = true;
+
+    var hotel = {
+        hotelName: $(param).attr("data-dtaName"),
+        category: $(param).attr("data-category"),
+        contactNumber1: $(param).attr("data-contact"),
+        priceHotel: $(param).attr("data-priceDay"),
+        btnR: param,
+        hotelId: $(param).attr("data-hotelId")
+    }
+    console.log(hotel);
+
+    temporaryHotelStore={hotel};
+
+    if (bool) {;
+        vNameArHotel.push(hotelPackage);
+    } else {
+        for (var i = 0; i < vNameArHotel.length; i++) {
+            if (vNameArHotel[i].model === $(param).attr("data-dtaName")) {
+                vNameArHotel.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+}
+
+function sendVehicleNameToCart() {
+    return vNameArHotel;
+}

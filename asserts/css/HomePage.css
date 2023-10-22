@@ -57,7 +57,10 @@ header{
     background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
     background-size: cover;
 }
-
+#userCart{
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("/asserts/image/Home_image.jpg") no-repeat;
+    background-size: cover;
+}
 .container-fluid button i{
     color: white;
     font-size: 2rem;
