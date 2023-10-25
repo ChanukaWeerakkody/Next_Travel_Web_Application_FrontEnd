@@ -94,7 +94,52 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             if (response.status === 200) {
                 // Successful login, redirect or perform desired action
                 alert("Welcome!");
-                $("#userCart").css("display","block");
+                if (!$.isEmptyObject(temporaryOrderStore)) {
+                    $("#vehicleRentalViewForm").css("display", "block");
+                    $("#guideRentalViewForm").css("display", "none");
+                    $("#hotelRentalViewForm").css("display", "none");
+                    $("#hotelPackageRentalViewForm").css("display", "none");
+                    $("#userCart").css("display", "block");
+
+                }else if(!$.isEmptyObject(temporaryGuideStore)){
+                    $("#guideRentalViewForm").css("display", "block");
+                    $("#vehicleRentalViewForm").css("display", "none");
+                    $("#hotelRentalViewForm").css("display", "none");
+                    $("#hotelPackageRentalViewForm").css("display", "none");
+                    $("#userCart").css("display", "block");
+
+                }else if(!$.isEmptyObject(temporaryHotelStore)){
+                    $("#hotelRentalViewForm").css("display", "block");
+                    $("#vehicleRentalViewForm").css("display", "none");
+                    $("#guideRentalViewForm").css("display", "none");
+                    $("#hotelPackageRentalViewForm").css("display", "none");
+                    $("#userCart").css("display", "block");
+
+                } else if(!$.isEmptyObject(temporaryPackageStore)){
+                    $("#hotelPackageRentalViewForm").css("display", "block");
+                    $("#hotelRentalViewForm").css("display", "none");
+                    $("#vehicleRentalViewForm").css("display", "none");
+                    $("#guideRentalViewForm").css("display", "none");
+                    $("#userCart").css("display", "block");
+
+                }else {
+                    // Array is not null or empty
+                    alert("Array is not null or empty");
+                    $("#userCart").css("display", "block");
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
                 $("#logIn").css("display","none");
             } else {
                 // Handle authentication failure

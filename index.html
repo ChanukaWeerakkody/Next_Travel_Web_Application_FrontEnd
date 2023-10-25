@@ -324,14 +324,14 @@
 
     <!--Cart section-->
     <section id="userCart">
-        <h1>Cart</h1>
-
+        <!--vehicle rental section-->
         <form id="vehicleRentalViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <h1>Vehicle Rental</h1>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-vehicleRental-vehicleId">Vehicle Id</label>
-                        <input class="form-control" disabled id="save-vehicleRental-vehicleId"  type="text">
+                        <input class="form-control" disabled id="save-vehicleRental-vehicleId" name="vehicleId" type="text">
                         <span class="control-error"></span>
                     </div>
                 </div>
@@ -351,14 +351,12 @@
                     </div>
                 </div>
             </div>
-
             <br>
-
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-groupFT">
                         <label class="form-label" for="save-vehicleRental-pricePerKM">Price per KM</label>
-                        <input class="form-control" disabled id="save-vehicleRental-pricePerKM" type="text">
+                        <input class="form-control" disabled id="save-vehicleRental-pricePerKM" name="pricePerKm"  type="text">
                         <span class="control-error"></span>
                     </div>
                 </div>
@@ -369,15 +367,277 @@
                         <span class="control-error" id="lblVDailyRate"></span>
                     </div>
                 </div>
-
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-vehicleRental-km">KM</label>
+                        <input class="form-control"  id="save-vehicleRental-km" name="km" type="text">
+                        <span class="control-error" id="lblVDailyRates"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-vehicleRental-driverName">Driver Name</label>
+                        <input class="form-control"  id="save-vehicleRental-driverName" name="driverName" type="text">
+                        <span class="control-error" id="lblVMonthlyRatess"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-vehicleRental-driverContact">Driver Contact</label>
+                        <input class="form-control"  id="save-vehicleRental-driverContact" name="driverContact" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-vehicleRental-finalPrice">Final Price</label>
+                        <input class="form-control" disabled id="save-vehicleRental-finalPrice" name="fullPrice" type="text" style="color: red">
+                        <span class="control-error" id="lblVDailyRated"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label fw-bold">Front View Of License</label>
+                    <input class="form-control frontViewOfLicense" id=frontViewOfLicense"
+                           name="frontViewOfLicense" type="file">
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label fw-bold">Back View Of License</label>
+                    <input class="form-control backViewOfLicense" id=backViewOfLicense"
+                           name="backViewOfLicense" type="file">
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-vehicleRental-userId">User Id</label>
+                        <input class="form-control"  id="save-vehicleRental-userId"  type="text" style="color: red" name="userId">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-vehicleRental-vehicleOid">Vehicle Order Id</label>
+                        <input class="form-control"  id="save-vehicleRental-vehicleOid" name="vehicleOid" type="text" style="color: red">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
             </div>
 
         </form>
 
-        <button id="setConsoleButton">Set Vehicle</button>
-        <button id="setGuideButton">Set Guide</button>
-        <button id="setPackageButton">Set Package</button>
-        <button id="setHotelButton">Set Hotel</button>
+        <!--guide rental section-->
+        <form id="guideRentalViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <h1>Guide Rental</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-guideId">Guide Id</label>
+                        <input class="form-control" disabled id="save-guideRental-guideId"  type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-guideRental-name">Name</label>
+                        <input class="form-control" disabled id="save-guideRental-name" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-guideRental-age">Age</label>
+                        <input class="form-control" disabled id="save-guideRental-age" type="text">
+                        <span class="control-error" id="lblVMonthlyRated"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-guideRental-contact">Contact Number</label>
+                        <input class="form-control" disabled id="save-guideRental-contact" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-price">Price Per Day</label>
+                        <input class="form-control" disabled id="save-guideRental-price"  type="text">
+                        <span class="control-error" id="lblVDailyRatex"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-days">Days</label>
+                        <input class="form-control"  id="save-guideRental-days"  type="text">
+                        <span class="control-error" id="lblVDailyRatesc"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-finalPrice">Final Price</label>
+                        <input class="form-control" disabled id="save-guideRental-finalPrice"  type="text" style="color: red">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <button id="checkGuidePrice">Check Guide Price</button>
+        </form>
+
+        <!--hotel rental section-->
+        <form id="hotelRentalViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <h1>Hotel Rental</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-hotelId">Hotel Id</label>
+                        <input class="form-control" disabled id="save-hotelRental-hotelId"  type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-hotelRental-hotelName">Hotel Name</label>
+                        <input class="form-control" disabled id="save-hotelRental-hotelName" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-hotelRental-category">Category</label>
+                        <input class="form-control" disabled id="save-hotelRental-category" type="text">
+                        <span class="control-error" id="lblVMonthlyRatedm"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-hotelRental-contact">Contact Number</label>
+                        <input class="form-control" disabled id="save-hotelRental-contact" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-price">Price Per Day</label>
+                        <input class="form-control" disabled id="save-hotelRental-price"  type="text">
+                        <span class="control-error" id="lblVDailyRatexl"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-days">Days</label>
+                        <input class="form-control"  id="save-hotelRental-days"  type="text">
+                        <span class="control-error" id="lblVDailyRatesck"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-finalPrice">Final Price</label>
+                        <input class="form-control" disabled id="save-hotelRental-finalPrice"  type="text" style="color: red">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button id="checkHotelPrice">Check Hotel Price</button>
+        </form>
+
+        <!--package rental section-->
+        <form id="hotelPackageRentalViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <h1>Package Rental</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-packageId">Package Id</label>
+                        <input class="form-control" disabled id="save-packageRental-packageId"  type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-packageRental-hotelName">Hotel Name</label>
+                        <input class="form-control" disabled id="save-packageRental-hotelName" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-packageRental-category">Category</label>
+                        <input class="form-control" disabled id="save-packageRental-category" type="text">
+                        <span class="control-error" id="lblVMonthlyRatedmx"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <label class="form-label" for="save-packageRental-contact">Contact Number</label>
+                        <input class="form-control" disabled id="save-packageRental-contact" type="text">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-price">Price Per Day</label>
+                        <input class="form-control" disabled id="save-packageRental-price"  type="text">
+                        <span class="control-error" id="lblVDailyRatexlz"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-days">Days</label>
+                        <input class="form-control"  id="save-packageRental-days"  type="text">
+                        <span class="control-error" id="lblVDailyRatescky"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-finalPrice">Final Price</label>
+                        <input class="form-control" disabled id="save-packageRental-finalPrice"  type="text" style="color: red">
+                        <span class="control-error"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </form>
+
+        <button class="p-2" id="checkPackagePrice">Check Price</button>
+        <br>
+        <label id="sumLabelVehicle" style="color: red"></label>
+        <br>
+        <label id="sumLabelGuide" style="color: red"></label>
+        <br>
+        <label id="sumLabelHotel" style="color: red"></label>
+        <br>
+        <label id="sumLabelPackage" style="color: red"></label>
+        <br>
+
+        <label id="sumLabelTotalPrice" style="color: red"></label>
+
+        <button class="p-2" id="purchaseOrder">Purchase Order</button>
 
     </section>
 

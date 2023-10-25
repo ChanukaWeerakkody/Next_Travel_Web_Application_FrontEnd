@@ -4,156 +4,154 @@ var rentalAr = [];
 var amount=0;
 var cusId;
 
-$("#setPackageButton").click(function (){
-    let packageId = temporaryPackageStore.hotelPackage.packageId;
-    let category = temporaryPackageStore.hotelPackage.category;
-    let hotelName = temporaryPackageStore.hotelPackage.hotelName;
-    let packagePrice = temporaryPackageStore.hotelPackage.packagePrice;
-    let contactNumber1 = temporaryPackageStore.hotelPackage.contactNumber1;
 
-    console.log(packageId);
-    console.log(category);
-    console.log(hotelName);
-    console.log(packagePrice);
-    console.log(contactNumber1);
+//calculate Price
+$("#checkPackagePrice").click(function () {
+   /* vehicle final price*/
+    var pricePerKM = $("#save-vehicleRental-pricePerKM").val();
+    var finalPrice = $("#save-vehicleRental-km").val();
 
-});
+    var fullPriceVehicle=pricePerKM*finalPrice;
+    $("#save-vehicleRental-finalPrice").val(fullPriceVehicle);
 
-$("#setHotelButton").click(function (){
-    let hotelId = temporaryHotelStore.hotel.hotelId;
-    let hotelName1 = temporaryHotelStore.hotel.hotelName;
-    let category1 = temporaryHotelStore.hotel.category;
-    let contactNumber2 = temporaryHotelStore.hotel.contactNumber1;
-    let priceHotel = temporaryHotelStore.hotel.priceHotel;
+    /* guide final price*/
+    var val = $("#save-guideRental-price").val();
+    var val1 = $("#save-guideRental-days").val();
 
-    console.log(hotelId);
-    console.log(hotelName1);
-    console.log(category1);
-    console.log(contactNumber2);
-    console.log(priceHotel);
+    var fullPriceGuide=val*val1;
+    $("#save-guideRental-finalPrice").val(fullPriceGuide);
 
-});
+    /* hotel final price*/
+    var val2 = $("#save-hotelRental-price").val();
+    var val3 = $("#save-hotelRental-days").val();
 
-$("#setGuideButton").click(function (){
-    let guideId = temporaryGuideStore.guide.guideId;
-    let fullName = temporaryGuideStore.guide.fullName;
-    let age = temporaryGuideStore.guide.age;
-    let contactNumber = temporaryGuideStore.guide.contactNumber;
-    let price = temporaryGuideStore.guide.price;
-
-    console.log(guideId);
-    console.log(fullName);
-    console.log(age);
-    console.log(contactNumber);
-    console.log(price);
-
-});
-
-$("#setConsoleButton").click(function (){
-    let model = temporaryOrderStore.cus.model;
-    let vehicleId = temporaryOrderStore.cus.vehicleId;
-    let type = temporaryOrderStore.cus.type;
-    let newPata = temporaryOrderStore.cus.newPata;
-    let priceKM = temporaryOrderStore.cus.priceKM;
+    var fullPriceHotel=val2*val3;
+    $("#save-hotelRental-finalPrice").val(fullPriceHotel);
 
 
-    let guideId = temporaryGuideStore.guide.guideId;
-    console.log(guideId);
+    /* package final price*/
+    var val4 = $("#save-packageRental-price").val();
+    var val5 = $("#save-packageRental-days").val();
 
-    $("#save-vehicleRental-vehicleId").val(vehicleId);
-    $("#save-vehicleRental-model").val(model);
-    $("#save-vehicleRental-colour").val(newPata);
-    $("#save-vehicleRental-pricePerKM").val(priceKM);
-    $("#save-vehicleRental-type").val(type);
-});
+    var fullPricePackage=val4*val5;
+    $("#save-packageRental-finalPrice").val(fullPricePackage);
 
-$("#addRental").click(function (){
-    alert("Works button")
-    var data = new FormData();
-    let vehicleId = temporaryOrderStore.cus.vehicleId;
-    let priceKM = temporaryOrderStore.cus.priceKM;
-    let rentalDate=$("#rentalDate").val();
-    let userId=$("#userId").val();
-    let oId=$("#oid").val();
+    $("#sumLabelVehicle").text("Sum of vehicle : " + fullPriceVehicle);
+    $("#sumLabelGuide").text("Sum of Guide : " + fullPriceGuide);
+    $("#sumLabelHotel").text("Sum of Price : " + fullPriceHotel);
+    $("#sumLabelPackage").text("Sum of Package : " + fullPricePackage);
 
-    let rental={
-        oId:oId,
-        date:rentalDate,
+    var totalPrice=fullPriceVehicle+fullPriceGuide+fullPriceHotel+fullPricePackage;
 
-        priceKM: priceKM,
-        user:{
-            user:userId,
-        },
-        vehicle:{
-            vehicleId: vehicleId,
-        },
+    $("#sumLabelTotalPrice").text("Total is : " + totalPrice);
+})
+
+
+
+
+
+$("#purchaseOrder").click(function () {
+    addPurchaseVehicle();
+})
+//purchase Vehicle
+function addPurchaseVehicle() {
+    var vData2 = new FormData();
+
+    let frontViewFileV = $(".frontViewOfLicense")[0].files[0];
+    let backViewFileV = $(".backViewOfLicense")[0].files[0];
+
+    console.log(frontViewFileV)
+    console.log(backViewFileV)
+
+    let frontFileNameV = $(".frontViewOfLicense")[0].files[0].name;
+    let backFileNameV = $(".backViewOfLicense")[0].files[0].name;
+
+
+    let vehicleOId = $("#save-vehicleRental-vehicleOid").val();
+    let vehicleId = $("#save-vehicleRental-vehicleId").val();
+    let driverName = $("#save-vehicleRental-driverName").val();
+    let driverContact = $("#save-vehicleRental-driverContact").val();
+    let pricePerKM = $("#save-vehicleRental-pricePerKM").val();
+    let km = $("#save-vehicleRental-km").val();
+    let finalPrice = $("#save-vehicleRental-finalPrice").val();
+    let userId = 1;
+
+
+    let imageV1 = frontFileNameV;
+    let imageV2 = backFileNameV;
+
+
+    var vehicleOrderDTO = {
+        vehicleOId:vehicleOId,
+        vehicleId:vehicleId,
+        driverName:driverName,
+        driverContact:driverContact,
+        pricePerKm:pricePerKM,
+        km:km,
+        fullPrice:finalPrice,
+        userId:userId,
+        image1: "uploads/" + imageV1,
+        image2: "uploads/" + imageV2,
+
 
     }
-    data.append("vehicleOrder", new Blob([JSON.stringify(rental)], {type: "application/json"}));
-    console.log(data);
+
+    vData2.append("vehicleFiles", frontViewFileV)
+    vData2.append("vehicleFiles", backViewFileV)
+
+    vData2.append("vehicle", new Blob([JSON.stringify(vehicleOrderDTO)], {type: "application/json"}))
+
+    console.log(vehicleOrderDTO);
+
     $.ajax({
-        url: baseUrlRental + "vehicleOrder",
+        url: baseUrlRental + "purchaseVehicle",
         method: "POST",
         async: true,
-        contentType:  "application/json",
+        contentType: false,
         processData: false,
-        data: data,
-        success:function (res){
-            if (res.status === 200) {
-                alert(res.message)
+        data: vData2,
+        success: function (resp) {
+            if (resp.status === 200) {
+                alert(resp.message)
             } else {
                 alert('Added Successfully!');
+                //uploadCarImages(vehicleId);
             }
         },
-
-        error: function (ob, textStatus, error) {
-            console.log(ob);
-            console.log(textStatus);
+        error: function (error) {
             console.log(error);
         }
-
     })
 
-    /*let rental={
-        oid:$("#save-rental-id").val(),
-        date:$("#save-rental-date").val(),
-        user:{
-            userId:$("#save-rental-userId").val(),
-        },
-        orderDetails:{
-            oid:$("#save-rental-id2").val(),
-            vehicleId:$("#save-rental-vehicleId").val(),
-            amount:$("#save-rental-amount").val(),
-        }
-    }
+}
 
 
 
-    console.log("Print "+rental);
 
-    $.ajax({
-        url: baseUrlRental + "order",
-        method: "POST",
-        contentType: false,
-        processData:false,
-        data:JSON.stringify(rental),
-        success:function (res){
-            if (res.status == 200) {
-                alert("Item saved successfully!");
-            } else {
-                alert(res.data)
-            }
-        },
 
-        error: function (ob, textStatus, error) {
-            console.log(ob);
-            console.log(textStatus);
-            console.log(error);
-        }
 
-    })*/
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -392,7 +392,14 @@ function setBrandToArray(param) {
 
     temporaryOrderStore={cus};
 
-    if (bool) {;
+    $('#save-vehicleRental-vehicleId').val(temporaryOrderStore.cus.vehicleId);
+    $('#save-vehicleRental-type').val(temporaryOrderStore.cus.type);
+    $('#save-vehicleRental-colour').val(temporaryOrderStore.cus.newPata);
+    $('#save-vehicleRental-pricePerKM').val(temporaryOrderStore.cus.priceKM);
+    $('#save-vehicleRental-model').val(temporaryOrderStore.cus.model);
+
+
+    if (bool) {
         vNameAr.push(cus);
     } else {
         for (var i = 0; i < vNameAr.length; i++) {

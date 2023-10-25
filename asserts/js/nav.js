@@ -189,19 +189,19 @@ $("#register").click(function (){
 
 $("#goToCart").click(function (){
     alert("Hey guest..You will register to Next Travel Pvt Ltd..")
-    $("#home").css("display","none");
-    $("#store").css("display","none");
-    $("#about").css("display","none");
-    $("#contact").css("display","none");
-    $("#logIn").css("display","block");
-    $("#benefits").css("display","none");
-    $("#package").css("display","none");
-    $("#hotel").css("display","none");
-    $("#guide").css("display","none");
-    $("#planYourHoliday").css("display","none");
-    $("#addForHome").css("display","none");
-    $("#pills-register").css("display","none");
-    $("#userCart").css("display","none");
+        $("#home").css("display", "none");
+        $("#store").css("display", "none");
+        $("#about").css("display", "none");
+        $("#contact").css("display", "none");
+        $("#logIn").css("display", "block");
+        $("#benefits").css("display", "none");
+        $("#package").css("display", "none");
+        $("#hotel").css("display", "none");
+        $("#guide").css("display", "none");
+        $("#planYourHoliday").css("display", "none");
+        $("#addForHome").css("display", "none");
+        $("#pills-register").css("display", "none");
+        $("#userCart").css("display", "none");
 });
 
 $("#goToCartGuide").click(function (){

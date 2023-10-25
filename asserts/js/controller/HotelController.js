@@ -27,7 +27,7 @@ $("#btnAdminAddHotel").click(function (){
         success:function (res){
             if (resp.status == 200) {
                 alert("Item saved successfully!");
-                loadAllItems();
+                loadAllVHotels();
             } else {
                 alert(res.data)
             }
@@ -228,7 +228,7 @@ function loadAllHotelToUser() {
                             
                             <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-dtaName="${hotel.hotelName}"  data-category="${hotel.category}" data-address="${hotel.address}" data-contact="${hotel.contactNumber}" data-priceDay="${hotel.packagePrice}" data-hotelId="${hotel.packageId}"  class="btn_RentItHotel">RENT IT</button>
+                                    <button data-dtaHotelName="${hotel.hotelName}"  data-hotelCategory="${hotel.category}" data-hotelAddress="${hotel.address}" data-hotelContact="${hotel.contactNumber1}" data-hotelPriceDay="${hotel.priceHotel}" data-hotelId="${hotel.hotelId}"  class="btn_RentItHotel">RENT IT</button>
                                 </div> 
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
@@ -261,15 +261,15 @@ function rentItHotelClick() {
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
 
-        let attrHotelName = $(this).attr("data-dtaName");
-        let attrCategory = $(this).attr("data-category");
-        let attrContact = $(this).attr("data-contact");
-        let attrPackagePrice = $(this).attr("data-priceDay");
+        let attrHotelName = $(this).attr("data-dtaHotelName");
+        let attrCategory = $(this).attr("data-hotelCategory");
+        let attrContact = $(this).attr("data-hotelContact");
+        let attrPackagePrice = $(this).attr("data-hotelPriceDay");
         let attrHotelId = $(this).attr("data-hotelId");
 
         console.log(attrHotelName,attrCategory,attrContact,attrPackagePrice,attrHotelId);
 
-        setBrandToArrayPackage(this);
+        setBrandToArrayHotel(this);
 
         if (colorsAreEqual(bgColor, "rgb(239, 239, 239)")) { //firstTime With hover
             $(this).text("Added");
@@ -311,10 +311,10 @@ function setBrandToArrayHotel(param) {
     let bool = true;
 
     var hotel = {
-        hotelName: $(param).attr("data-dtaName"),
-        category: $(param).attr("data-category"),
-        contactNumber1: $(param).attr("data-contact"),
-        priceHotel: $(param).attr("data-priceDay"),
+        hotelName: $(param).attr("data-dtaHotelName"),
+        category: $(param).attr("data-hotelCategory"),
+        contactNumber1: $(param).attr("data-hotelContact"),
+        priceHotel: $(param).attr("data-hotelPriceDay"),
         btnR: param,
         hotelId: $(param).attr("data-hotelId")
     }
@@ -322,11 +322,17 @@ function setBrandToArrayHotel(param) {
 
     temporaryHotelStore={hotel};
 
+    $('#save-hotelRental-hotelId').val(temporaryHotelStore.hotel.hotelId);
+    $('#save-hotelRental-hotelName').val(temporaryHotelStore.hotel.hotelName);
+    $('#save-hotelRental-category').val(temporaryHotelStore.hotel.category);
+    $('#save-hotelRental-contact').val(temporaryHotelStore.hotel.contactNumber1);
+    $('#save-hotelRental-price').val(temporaryHotelStore.hotel.priceHotel);
+
     if (bool) {;
         vNameArHotel.push(hotelPackage);
     } else {
         for (var i = 0; i < vNameArHotel.length; i++) {
-            if (vNameArHotel[i].model === $(param).attr("data-dtaName")) {
+            if (vNameArHotel[i].model === $(param).attr("data-dtaHotelName")) {
                 vNameArHotel.splice(i, 1);
                 break;
             }

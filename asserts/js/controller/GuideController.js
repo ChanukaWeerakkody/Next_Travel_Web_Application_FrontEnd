@@ -360,6 +360,12 @@ function setBrandToArrayGuide(param) {
 
     temporaryGuideStore={guide};
 
+    $('#save-guideRental-guideId').val(temporaryGuideStore.guide.guideId);
+    $('#save-guideRental-name').val(temporaryGuideStore.guide.fullName);
+    $('#save-guideRental-age').val(temporaryGuideStore.guide.age);
+    $('#save-guideRental-contact').val(temporaryGuideStore.guide.contactNumber);
+    $('#save-guideRental-price').val(temporaryGuideStore.guide.price);
+
     if (bool) {;
         vNameArGuide.push(guide);
     } else {

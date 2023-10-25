@@ -389,6 +389,12 @@ function setBrandToArrayPackage(param) {
 
     temporaryPackageStore={hotelPackage};
 
+    $('#save-packageRental-packageId').val(temporaryPackageStore.hotelPackage.packageId);
+    $('#save-packageRental-hotelName').val(temporaryPackageStore.hotelPackage.hotelName);
+    $('#save-packageRental-category').val(temporaryPackageStore.hotelPackage.category);
+    $('#save-packageRental-contact').val(temporaryPackageStore.hotelPackage.contactNumber1);
+    $('#save-packageRental-price').val(temporaryPackageStore.hotelPackage.packagePrice);
+
     if (bool) {;
         vNameArPackage.push(hotelPackage);
     } else {
