@@ -25,11 +25,11 @@ $("#btnAdminAddHotel").click(function (){
         method: "POST",
         data:hotel,
         success:function (res){
-            if (resp.status == 200) {
-                alert("Item saved successfully!");
-                loadAllVHotels();
+            if (res.status === 200) {
+                alert(res.message)
             } else {
-                alert(res.data)
+                alert('Added Successfully!');
+                //uploadCarImages(vehicleId);
             }
         },
 

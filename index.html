@@ -411,6 +411,9 @@
                     <input class="form-control backViewOfLicense" id=backViewOfLicense"
                            name="backViewOfLicense" type="file">
                 </div>
+
+            </div>
+            <div class="row" id="vehicleRental">
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-vehicleRental-userId">User Id</label>
@@ -426,7 +429,6 @@
                     </div>
                 </div>
             </div>
-
         </form>
 
         <!--guide rental section-->
@@ -436,7 +438,7 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-guideRental-guideId">Guide Id</label>
-                        <input class="form-control" disabled id="save-guideRental-guideId"  type="text">
+                        <input class="form-control" disabled id="save-guideRental-guideId" name="guideId" type="text">
                         <span class="control-error"></span>
                     </div>
                 </div>
@@ -468,14 +470,14 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-guideRental-price">Price Per Day</label>
-                        <input class="form-control" disabled id="save-guideRental-price"  type="text">
+                        <input class="form-control" disabled id="save-guideRental-price" name="pricePerDay" type="text">
                         <span class="control-error" id="lblVDailyRatex"></span>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-guideRental-days">Days</label>
-                        <input class="form-control"  id="save-guideRental-days"  type="text">
+                        <input class="form-control"  id="save-guideRental-days" name="days" type="text">
                         <span class="control-error" id="lblVDailyRatesc"></span>
                     </div>
                 </div>
@@ -484,14 +486,29 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-guideRental-finalPrice">Final Price</label>
-                        <input class="form-control" disabled id="save-guideRental-finalPrice"  type="text" style="color: red">
+                        <input class="form-control" disabled id="save-guideRental-finalPrice" name="fullPrice" type="text" style="color: red">
                         <span class="control-error"></span>
                     </div>
                 </div>
             </div>
+            <div class="row" id="guideRental">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-userId">User Id</label>
+                        <input class="form-control"  id="save-guideRental-userId"  type="text" style="color: red" name="userId">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-guideRental-guideOid">Vehicle Order Id</label>
+                        <input class="form-control"  id="save-guideRental-guideOid" name="guideOid" type="text" style="color: red">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+            </div>
             <br>
-            <br>
-            <button id="checkGuidePrice">Check Guide Price</button>
+
         </form>
 
         <!--hotel rental section-->
