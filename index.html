@@ -518,7 +518,7 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-hotelRental-hotelId">Hotel Id</label>
-                        <input class="form-control" disabled id="save-hotelRental-hotelId"  type="text">
+                        <input class="form-control" disabled id="save-hotelRental-hotelId" name="hotelId" type="text">
                         <span class="control-error"></span>
                     </div>
                 </div>
@@ -550,14 +550,14 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-hotelRental-price">Price Per Day</label>
-                        <input class="form-control" disabled id="save-hotelRental-price"  type="text">
+                        <input class="form-control" disabled id="save-hotelRental-price" name="pricePerDay" type="text">
                         <span class="control-error" id="lblVDailyRatexl"></span>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-hotelRental-days">Days</label>
-                        <input class="form-control"  id="save-hotelRental-days"  type="text">
+                        <input class="form-control"  id="save-hotelRental-days" name="days" type="text">
                         <span class="control-error" id="lblVDailyRatesck"></span>
                     </div>
                 </div>
@@ -567,13 +567,29 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-hotelRental-finalPrice">Final Price</label>
-                        <input class="form-control" disabled id="save-hotelRental-finalPrice"  type="text" style="color: red">
+                        <input class="form-control" disabled id="save-hotelRental-finalPrice" name="fullPrice" type="text" style="color: red">
                         <span class="control-error"></span>
                     </div>
                 </div>
             </div>
+            <div class="row" id="hotelRental">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-userId">User Id</label>
+                        <input class="form-control"  id="save-hotelRental-userId"  type="text" style="color: red" name="userId">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-hotelRental-hotelOid">Hotel Order Id</label>
+                        <input class="form-control"  id="save-hotelRental-hotelOid" name="hotelOid" type="text" style="color: red">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+            </div>
             <br>
-            <button id="checkHotelPrice">Check Hotel Price</button>
+
         </form>
 
         <!--package rental section-->

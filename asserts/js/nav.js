@@ -203,6 +203,8 @@ $("#goToCart").click(function (){
         $("#pills-register").css("display", "none");
         $("#userCart").css("display", "none");
         $("#vehicleRental").css("display", "none");
+        $("#guideRental").css("display", "none");
+        $("#hotelRental").css("display", "none");
 });
 
 $("#goToCartGuide").click(function (){
@@ -221,6 +223,8 @@ $("#goToCartGuide").click(function (){
     $("#pills-register").css("display","none");
     $("#userCart").css("display","none");
     $("#vehicleRental").css("display", "none");
+    $("#guideRental").css("display", "none");
+    $("#hotelRental").css("display", "none");
 });
 
 $("#goToCartPackage").click(function (){
@@ -239,6 +243,8 @@ $("#goToCartPackage").click(function (){
     $("#pills-register").css("display","none");
     $("#userCart").css("display","none");
     $("#vehicleRental").css("display", "none");
+    $("#guideRental").css("display", "none");
+    $("#hotelRental").css("display", "none");
 });
 
 $("#goToCartHotel").click(function (){
@@ -257,4 +263,6 @@ $("#goToCartHotel").click(function (){
     $("#pills-register").css("display","none");
     $("#userCart").css("display","none");
     $("#vehicleRental").css("display", "none");
+    $("#guideRental").css("display", "none");
+    $("#hotelRental").css("display", "none");
 });
