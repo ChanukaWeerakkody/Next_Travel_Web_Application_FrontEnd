@@ -205,6 +205,7 @@ $("#goToCart").click(function (){
         $("#vehicleRental").css("display", "none");
         $("#guideRental").css("display", "none");
         $("#hotelRental").css("display", "none");
+        $("#hotelPackageRental").css("display", "none");
 });
 
 $("#goToCartGuide").click(function (){
@@ -225,6 +226,7 @@ $("#goToCartGuide").click(function (){
     $("#vehicleRental").css("display", "none");
     $("#guideRental").css("display", "none");
     $("#hotelRental").css("display", "none");
+    $("#hotelPackageRental").css("display", "none");
 });
 
 $("#goToCartPackage").click(function (){
@@ -245,6 +247,7 @@ $("#goToCartPackage").click(function (){
     $("#vehicleRental").css("display", "none");
     $("#guideRental").css("display", "none");
     $("#hotelRental").css("display", "none");
+    $("#hotelPackageRental").css("display", "none");
 });
 
 $("#goToCartHotel").click(function (){
@@ -265,4 +268,5 @@ $("#goToCartHotel").click(function (){
     $("#vehicleRental").css("display", "none");
     $("#guideRental").css("display", "none");
     $("#hotelRental").css("display", "none");
+    $("#hotelPackageRental").css("display", "none");
 });

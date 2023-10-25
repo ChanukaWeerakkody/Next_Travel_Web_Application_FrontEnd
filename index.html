@@ -599,7 +599,7 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-packageRental-packageId">Package Id</label>
-                        <input class="form-control" disabled id="save-packageRental-packageId"  type="text">
+                        <input class="form-control" disabled id="save-packageRental-packageId"  name="packageId" type="text">
                         <span class="control-error"></span>
                     </div>
                 </div>
@@ -631,14 +631,14 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-packageRental-price">Price Per Day</label>
-                        <input class="form-control" disabled id="save-packageRental-price"  type="text">
+                        <input class="form-control" disabled id="save-packageRental-price" name="pricePerDay" type="text">
                         <span class="control-error" id="lblVDailyRatexlz"></span>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-packageRental-days">Days</label>
-                        <input class="form-control"  id="save-packageRental-days"  type="text">
+                        <input class="form-control"  id="save-packageRental-days" name="days" type="text">
                         <span class="control-error" id="lblVDailyRatescky"></span>
                     </div>
                 </div>
@@ -648,8 +648,24 @@
                 <div class="col-sm-4">
                     <div class="form-groupNFP">
                         <label class="form-label" for="save-packageRental-finalPrice">Final Price</label>
-                        <input class="form-control" disabled id="save-packageRental-finalPrice"  type="text" style="color: red">
+                        <input class="form-control" disabled id="save-packageRental-finalPrice" name="fullPrice" type="text" style="color: red">
                         <span class="control-error"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="hotelPackageRental">
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-userId">User Id</label>
+                        <input class="form-control"  id="save-packageRental-userId"  type="text" style="color: red" name="userId">
+                        <span class="control-error" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <label class="form-label" for="save-packageRental-hotelOid">Package Order Id</label>
+                        <input class="form-control"  id="save-packageRental-hotelOid" name="packageOid" type="text" style="color: red">
+                        <span class="control-error" ></span>
                     </div>
                 </div>
             </div>
@@ -669,7 +685,7 @@
         <br>
 
         <label id="sumLabelTotalPrice" style="color: red"></label>
-
+        <br><br>
         <button class="p-2" id="purchaseOrder">Purchase Order</button>
 
     </section>

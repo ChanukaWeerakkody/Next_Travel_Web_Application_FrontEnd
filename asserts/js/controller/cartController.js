@@ -53,7 +53,8 @@ $("#checkPackagePrice").click(function () {
 $("#purchaseOrder").click(function () {
     //addPurchaseVehicle();
     //addPurchaseGuide();
-    addPurchaseHotel();
+    //addPurchaseHotel();
+    addPurchasePackage();
 })
 //purchase Vehicle
 function addPurchaseVehicle() {
@@ -205,7 +206,43 @@ function addPurchaseHotel(){
 }
 
 
+//purchase Package
+function addPurchasePackage(){
+    let purchasePackage={
+        packageId:$("#save-packageRental-packageId").val(),
+        pricePerDay:$("#save-packageRental-price").val(),
+        days:$("#save-packageRental-days").val(),
+        fullPrice:$("#save-packageRental-finalPrice").val(),
 
+        userId:1,
+        hotelOid:$("#save-hotelRental-hotelOid").val(),
+
+    }
+    let jHotel =JSON.stringify(purchasePackage);
+
+    console.log(jHotel);
+
+    $.ajax({
+        url: baseUrlRental + "purchaseHotelPackage",
+        method: "POST",
+        data:purchasePackage,
+        success:function (res){
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Added Successfully!');
+                //uploadCarImages(vehicleId);
+            }
+        },
+
+        error: function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+
+    })
+}
 
 
 
