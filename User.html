@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vehicle Admin</title>
+    <title>User Form</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Google Fonts -->
@@ -23,104 +23,10 @@
     <link href="asserts/css/main.css" rel="stylesheet">
     <link href="asserts/css/main/normalize.css" rel="stylesheet">
     <link href="asserts/css/main/adminDashboard.css" rel="stylesheet">
-    <link href="asserts/css/main/viewVehicle.css" rel="stylesheet">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <!----------------------------------------------------LOGIN FORM--------------------------------------->
-    <main id="spaAdminMainLogIn">
-    <main>
-        <div class="container">
-            <section
-                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-                            <div class="d-flex justify-content-center py-4">
-                                <a class="logo d-flex align-items-center w-auto" href="asserts/pages/index.html">
-                                    <img alt="" src="asserts/image/Next_travel_Logo.png">
-                                    <span class="d-none d-lg-block">NEXT TRAVEL</span>
-                                </a>
-                            </div><!-- End Logo -->
-
-
-                            <form id="loginForm" class="form-outline mb-4 card mb-3 card-body pt-4 pb-2">
-                                <div class="pt-4 pb-2">
-                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                    <p class="text-center small">Enter your username & password to login</p>
-                                </div>
-
-                                <div class="form-group col-md-14 mb-3">
-                                    <select aria-label="Default select example" class="form-select mb-3"
-                                            id="category">
-                                        <option disabled selected value="">Category</option>
-                                        <option value="Vehicle">Vehicle</option>
-                                        <option value="Guide">Guide</option>
-                                        <option value="Hotel">Hotel</option>
-                                        <option value="Package">Package</option>
-                                        <option value="User">User</option>
-                                    </select>
-                                </div>
-
-                                <input class="form-control" id="username" placeholder="Email or Username" type="text" name="checkUsername" required>
-                                <br>
-
-
-                                <input class="form-control" id="password" placeholder="Password" type="text" name="checkPassword" required>
-                                <br>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" id="rememberMe" name="remember"
-                                               type="checkbox"
-                                               value="true">
-                                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                                    </div>
-                                </div>
-
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-block mb-4">Log In</button>
-
-
-                                <div class="text-center mb-3">
-
-                                    <div class="loginSource">
-                                        <button type="button" class="btn btn-link btn-floating mx-1" >
-                                            <i class='bx bxl-facebook-circle' ></i>
-                                        </button>
-
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
-                                            <i class='bx bxl-google'></i>
-                                        </button>
-
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
-                                            <i class='bx bxl-twitter' ></i>
-                                        </button>
-
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
-                                            <i class='bx bxl-github' ></i>
-                                        </button>
-                                        <p class="textColour" >Sign in with</p>
-                                    </div>
-
-                                </div>
-
-                            </form>
-                            <div class="credits">
-                                Designed by <a href="https://github.com/ChanukaWeerakkody">Chanuka Weerakkody</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-        </div>
-    </main><!-- End #main -->
-</main>
-
     <!----------------------------------------------------DASHBOARD FORM--------------------------------------->
     <main id="adminHeaderMain">
         <!----------------------------------------------------HEADER--------------------------------------->
@@ -196,7 +102,15 @@
 
                 <li class="nav-heading">Pages</li>
 
-                <!-- Start Car Page Nav -->
+                <!-- Start Reser Page Nav
+                <li class="nav-item" id="adRes">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Reservation</span>
+                    </a>
+                </li> End Reser Page Nav
+
+                 Start Car Page Nav
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse">
                         <i class="fa-solid fa-car-rear"></i><span>Vehicle</span><i
@@ -208,14 +122,79 @@
                                 <i class="bi bi-circle"></i><span>Add Vehicle</span>
                             </a>
                         </li>
-                        <li id="adViewVehicleView">
+                        <li id="adViewCarView">
                             <a>
                                 <i class="bi bi-circle"></i><span>View vehicle</span>
                             </a>
                         </li>
                     </ul>
-                </li><!-- End Car Nav -->
+                </li> End Car Nav
 
+                 Start Package Page Nav
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#package-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>Package</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="package-nav">
+                        <li id="adViewPackage">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add Package</span>
+                            </a>
+                        </li>
+                        <li id="adViewPackageView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View Package</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> End Package Nav
+
+                 Start Customer Page Nav
+                <li class="nav-item" id="adViewAllCustomer">
+                    <a class="nav-link collapsed">
+                        <i class='bx bxs-user-voice'></i>
+                        <span>Customer</span>
+                    </a>
+                </li> End Customer Page Nav -->
+
+                <!-- Start User Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#user-nav" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-car-rear"></i><span>User</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="user-nav">
+                        <li id="adViewUser">
+                            <a>
+                                <i class="bi bi-circle"></i><span>Add User</span>
+                            </a>
+                        </li>
+                        <li id="adViewUserView">
+                            <a>
+                                <i class="bi bi-circle"></i><span>View User</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li><!-- End Driver Nav -->
+
+                <!-- Start Hotel Page Nav
+                <li class="nav-item" id="adHotel">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Hotel</span>
+                    </a>
+                </li> End Hotel Page Nav -->
+
+
+                <!-- Start payment Page Nav
+                <li class="nav-item" id="adPayment">
+                    <a class="nav-link collapsed">
+                        <i class="fa-solid fa-money-check-dollar"></i></i>
+                        <span>Payment</span>
+                    </a>
+                </li> End payment Page Nav -->
             </ul>
 
         </aside>
@@ -378,9 +357,102 @@
 
     </main>
 
-    <!----------------------------------------------------VEHICLE FORM--------------------------------------->
-    <main id="adminAddVehicle">
-        <main class="main" id="adminCarAdd">
+    <!----------------------------------------------------LOGIN FORM--------------------------------------->
+    <main id="spaAdminMainLogIn">
+        <main>
+            <div class="container">
+                <section
+                        class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                                <div class="d-flex justify-content-center py-4">
+                                    <a class="logo d-flex align-items-center w-auto" href="asserts/pages/index.html">
+                                        <img alt="" src="asserts/image/Next_travel_Logo.png">
+                                        <span class="d-none d-lg-block">NEXT TRAVEL</span>
+                                    </a>
+                                </div><!-- End Logo -->
+
+
+                                <form id="loginForm" class="form-outline mb-4 card mb-3 card-body pt-4 pb-2">
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                        <p class="text-center small">Enter your username & password to login</p>
+                                    </div>
+
+                                    <div class="form-group col-md-14 mb-3">
+                                        <select aria-label="Default select example" class="form-select mb-3"
+                                                id="category">
+                                            <option disabled selected value="">Category</option>
+                                            <option value="Vehicle">Vehicle</option>
+                                            <option value="Guide">Guide</option>
+                                            <option value="Hotel">Hotel</option>
+                                            <option value="Package">Package</option>
+                                            <option value="User">User</option>
+                                        </select>
+                                    </div>
+
+                                    <input class="form-control" id="username" placeholder="Email or Username" type="text" name="checkUsername" required>
+                                    <br>
+
+
+                                    <input class="form-control" id="password" placeholder="Password" type="text" name="checkPassword" required>
+                                    <br>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="rememberMe" name="remember"
+                                                   type="checkbox"
+                                                   value="true">
+                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Log In</button>
+
+
+                                    <div class="text-center mb-3">
+
+                                        <div class="loginSource">
+                                            <button type="button" class="btn btn-link btn-floating mx-1" >
+                                                <i class='bx bxl-facebook-circle' ></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-google'></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-twitter' ></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <i class='bx bxl-github' ></i>
+                                            </button>
+                                            <p class="textColour" >Sign in with</p>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                <div class="credits">
+                                    Designed by <a href="https://github.com/ChanukaWeerakkody">Chanuka Weerakkody</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </main><!-- End #main -->
+    </main>
+
+    <!----------------------------------------------------GUIDE FORM--------------------------------------->
+    <main id="adminAddUser">
+        <main class="main" id="adminGuideAdd">
 
             <div class="container">
                 <section
@@ -394,148 +466,103 @@
                                     <div class="card-body">
 
                                         <div class="pt-4 pb-2">
-                                            <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                            <h5 class="card-title text-center pb-0 fs-4">Add Guide</h5>
                                         </div>
-
 
                                         <form class="row g-3" name="form1">
 
                                             <!--Id-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="new_vehicle_id"
-                                                       name="vehicleId"
-                                                       placeholder="Vehicle Id" type="text">
+                                                       id="save-user-id" placeholder="User Id" name="userId"
+                                                       type="text">
                                             </div>
 
                                             <div class=" col-md-6 mb-3">
 
                                             </div>
 
-                                            <!--Brand-->
+                                            <!--Username-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3 "
+                                                       id="save-user-username" placeholder="Username" name="username"
+                                                       type="text">
+                                            </div>
+
+                                            <!--password-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="new_vehicle_brand"
-                                                       name="brand"
-                                                       placeholder="Brand" type="text">
+                                                       id="new_user_password"
+                                                       name="password"
+                                                       placeholder="Password" type="text">
                                             </div>
 
-                                            <!--Sub name-->
+                                            <!--Age-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="new_vehicle_name"
-                                                       name="subName"
-                                                       placeholder="Name" type="text">
+                                                       id="save-user-age" name="age"
+                                                       placeholder="Age" type="text">
                                             </div>
 
-                                            <!--Type-->
-                                            <div class="form-group col-md-6 mb-3">
-                                                <select aria-label="Default select example" class="form-select mb-3"
-                                                        id="save-vehicle-type" name="type">
-                                                    <option disabled selected value="">Select Type</option>
-                                                    <option value="Car">Car</option>
-                                                    <option value="Van">Van</option>
-                                                    <option value="Suv">Suv</option>
-                                                    <option value="Bus">Bus</option>
-                                                </select>
-                                            </div>
 
-                                            <!--Colour-->
+                                            <!--Contact number-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="pata"
-                                                       name="pata"
-                                                       placeholder="Colour" type="text">
+                                                       id="save-user-contactNumber" name="phoneNumber"
+                                                       placeholder="Contact Number" type="text">
                                             </div>
 
-                                            <!--Category-->
+
+                                            <!--Gender-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <select aria-label="Default select example" class="form-select mb-3"
-                                                        id="save-vehicle-category" name="category">
-                                                    <option disabled selected value="">Select Category</option>
-                                                    <option value="Economic">Economic</option>
-                                                    <option value="Mid Range">Mid Range</option>
-                                                    <option value="Luxury">Luxury</option>
-                                                    <option value="Super Luxury">Super Luxury</option>
-                                                </select>
-                                            </div>
-
-                                            <!--Transmission-->
-                                            <div class="form-group col-md-6 mb-3">
-                                                <select aria-label="Default select example" class="form-select mb-3"
-                                                        id="save-vehicle-transmission" name="transmission">
-                                                    <option disabled selected value="">Transmission Type</option>
-                                                    <option value="Auto">Auto</option>
-                                                    <option value="Manual">Manual</option>
-                                                </select>
-                                            </div>
-
-
-                                            <!--No of Passenger-->
-                                            <div class="form-group col-md-6 mb-3">
-                                                <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="seatCapacity"
-                                                       name="seatCapacity"
-                                                       placeholder="Seat Capacity" type="text">
-                                            </div>
-
-                                            <!--Fuel-->
-                                            <div class="form-group col-md-6 mb-3">
-                                                <select aria-label="Default select example" class="form-select mb-3"
-                                                        id="save-vehicle-fuelType" name="fuelType">
-                                                    <option disabled selected>Fuel Type</option>
-                                                    <option value="Petrol">Petrol</option>
-                                                    <option value="Diesel">Diesel</option>
-                                                </select>
-                                            </div>
-
-                                            <!--Model-->
-                                            <div class="form-group col-md-6 mb-3">
-                                                <select aria-label="Default select example" class="form-select mb-3"
-                                                        id="save-vehicle-model" name="model">
-                                                    <option disabled selected>Select Model</option>
-                                                    <option value="Hybrid">Hybrid</option>
-                                                    <option value="Non-Hybrid">Non-Hybrid</option>
+                                                        id="save-user-gender" name="gender">
+                                                    <option disabled selected value="">Select Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
                                                 </select>
                                             </div>
 
 
 
-                                            <!--Price Per KM-->
+                                            <!--Nic Number-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input aria-label="Disabled input example" class="form-control mb-3"
-                                                       id="pricePerKM"
-                                                       name="pricePerKM"
-                                                       placeholder="Price Per KM" type="text">
+                                                       id="save-user-nic" name="nicNumber"
+                                                       placeholder="NIC Number" type="text">
                                             </div>
 
+                                            <!--Email-->
                                             <div class="form-group col-md-6 mb-3">
-                                                <label class="form-label fw-bold">Front View Of Car</label>
-                                                <input class="form-control frontView" id=frontView"
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-user-email" name="email"
+                                                       placeholder="Email" type="text">
+                                            </div>
+
+                                            <!--address-->
+                                            <div class="form-group col-md-6 mb-3">
+                                                <input aria-label="Disabled input example" class="form-control mb-3"
+                                                       id="save-user-address" name="address"
+                                                       placeholder="Address" type="text">
+                                            </div>
+
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label class="form-label fw-bold">Front View Of NIC</label>
+                                                <input class="form-control frontViewNic" id=frontViewNic"
                                                        name="frontView" type="file">
                                             </div>
 
                                             <div class="form-group col-md-6 mb-3">
-                                                <label class="form-label fw-bold">Back View Of Car</label>
-                                                <input class="form-control backView" id=backView"
+                                                <label class="form-label fw-bold">Back View Of NIC</label>
+                                                <input class="form-control backViewNic" id=backViewNic"
                                                        name="backView" type="file">
                                             </div>
-                                            <div class="form-group col-md-6 mb-3">
-                                                <label class="form-label fw-bold">Side View Of Car</label>
-                                                <input class="form-control sideView" id=sideView"
-                                                       name="sideView" type="file">
-                                            </div>
-                                            <div class="form-group col-md-6 mb-3">
-                                                <label class="form-label fw-bold">Interior View Of Car</label>
-                                                <input class="form-control interior" id=interior"
-                                                       name="interior" type="file">
-                                            </div>
-
 
                                             <!--Add btn-->
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100" id="btnAdminAddVehicle" type="button">Add
-                                                    Vehicle
+                                                <button class="btn btn-primary w-100" id="btnAdminAddUser" type="button">Add
+                                                    User
                                                 </button>
                                             </div>
 
@@ -557,180 +584,137 @@
         </main>
     </main>
 
-    <!----------------------------------------------------VEHICLE VIEW FORM--------------------------------------->
-    <main id="spaAdminViewVehicle">
-        <main class="main" id="adminViewVehicleSpa">
+    <!----------------------------------------------------GUIDE VIEW FORM--------------------------------------->
+    <main id="spaAdminViewUser">
+        <main class="main" id="adminViewUserSpa">
 
             <div class="pagetitle">
-                <h1>View Vehicles</h1>
+                <h1>View Users</h1>
             </div><!-- End Page Title -->
 
-            <form id="carViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <form id="userViewForm" style="margin-left: 5px; margin-top: 44px;">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-groupCF">
-                            <label class="form-label" for="update-vehicle-Id">Vehicle Id</label>
-                            <input class="form-control" disabled id="update-vehicle-Id"
+                            <label class="form-label" for="update-user-Id">User Id</label>
+                            <input class="form-control" disabled id="update-user-Id"
                                    type="text">
-                            <span class="control-error" id="lblVReg"></span>
+                            <span class="control-error" id="lblVRegs"></span>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-groupNFP">
-                            <label class="form-label" for="update-vehicle-brand">Brand</label>
-                            <input class="form-control" id="update-vehicle-brand"  type="text">
-                            <span class="control-error" id="lblVDailyRate"></span>
+                            <label class="form-label" for="update-user-username">Username</label>
+                            <input class="form-control" id="update-user-username"  type="text">
+                            <span class="control-error" id="lblVDailyRates"></span>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-groupFT">
-                            <label class="form-label" for="updatePata">Colour</label>
-                            <input class="form-control" id="updatePata" type="text">
-                            <span class="control-error" id="lblVMonthlyRate"></span>
+                            <label class="form-label" for="update-user-password">Password</label>
+                            <input class="form-control" id="update-user-password" type="text">
+                            <span class="control-error" id="lblVMonthlyRates"></span>
                         </div>
                     </div>
                 </div>
 
                 <br>
 
-
-                <div class="row">
-
-                    <div class="col-sm-4" id="uploadUBFF">
-                        <label class="form-label" for="update-vehicle-type">Type</label>
-                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-type">
-                            <option>Type</option>
-                            <option value="Car">Car</option>
-                            <option value="Van">Van</option>
-                            <option value="Suv">Suv</option>
-                            <option value="Bus">Bus</option>
-                        </select>
-                    </div>
-
-                    <div class="col-sm-4" id="uploadUBFH">
-                        <label class="form-label" for="update-vehicle-category">Category</label>
-                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-category">
-                            <option>Category</option>
-                            <option value="Economic">Economic</option>
-                            <option value="Midrange">Midrange</option>
-                            <option value="Luxury">Luxury</option>
-                            <option value="Super Luxury">Super Luxury</option>
-                        </select>
-                    </div>
-
-                    <div class="col-sm-4" id="uploadUBFI">
-                        <label class="form-label" for="update-vehicle-transmission">TransMission</label>
-                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-transmission">
-                            <option>TransMission</option>
-                            <option value="Auto">Auto</option>
-                            <option value="Manual">Manual</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
 
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-groupMRT">
-                            <label class="form-label" for="update-vehicle-seatCapacity">Seat Capacity</label>
-                            <input class="form-control" id="update-vehicle-seatCapacity"  type="text">
-                            <span class="control-error" id="lblexkm"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4" id="uploadUBFJ">
-                        <label class="form-label" for="update-vehicle-fuel">Fuel Type</label>
-                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-fuel">
-                            <option>Fuel Type</option>
-                            <option value="Petrol">Petrol</option>
-                            <option value="Diesel">Diesel</option>
-                        </select>
-                    </div>
-
-                    <div class="col-sm-4" id="uploadUBF">
-                        <label class="form-label" for="update-vehicle-model">Model</label>
-                        <select aria-label="form-select-lg example" class="form-select form-select-ls "
-                                id="update-vehicle-model">
-                            <option>Model</option>
-                            <option value="Hybrid">Hybrid</option>
-                            <option value="Non Hybrid">Non Hybrid</option>
-                        </select>
-                    </div>
-
-                </div>
-                <br>
-
-            </form>
-
-            <form id="carViewForm2" style="margin-left: 5px; margin-top: 44px;">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="form-groupCF">
-                            <label class="form-label" for="update-vehicle-subName">Sub name</label>
-                            <input class="form-control" disabled id="update-vehicle-subName"
-                                   type="text">
-                            <span class="control-error" id="lblVRega"></span>
+                            <label class="form-label" for="update-user-age">Age</label>
+                            <input class="form-control" id="update-user-age" type="text">
+                            <span class="control-error" id="lblDmCosts"></span>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-groupNFP">
-                            <label class="form-label" for="update-vehicle-pricePerKM">Price Per KM</label>
-                            <input class="form-control" id="update-vehicle-pricePerKM"  type="text">
-                            <span class="control-error" id="lblVDailyRatea"></span>
+                            <label class="form-label" for="update-user-contact">Contact Number</label>
+                            <input class="form-control" id="update-user-contact"
+                                   type="text">
+                            <span class="control-error" id="lblVLasts"></span>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-groupFT">
-                            <label class="form-label" for="update-image1">Image 1</label>
-                            <input class="form-control" id="update-image1" type="text">
-                            <span class="control-error" id="lblVMonthlyRatea"></span>
+                            <label class="form-label" for="update-user-email">Email</label>
+                            <input class="form-control" id="update-user-email"
+                                   type="text">
+                            <span class="control-error" id="lblVFrees"></span>
                         </div>
                     </div>
                 </div>
-
+                <br>
                 <br>
 
+            </form>
 
+
+            <form id="userViewForm2" style="margin-left: 5px; margin-top: 44px;">
                 <div class="row">
-
-                    <div class="form-groupFT">
-                        <label class="form-label" for="update-image2">Image 2</label>
-                        <input class="form-control" id="update-image2" type="text">
-                        <span class="control-error" id="lblVMonthlyRateq"></span>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-user-nic">NIC </label>
+                            <input class="form-control" id="update-user-nic"  type="text">
+                            <span class="control-error" id="lblVDailyRatesa"></span>
+                        </div>
                     </div>
 
-                    <div class="form-groupFT">
-                        <label class="form-label" for="update-image3">Image 3</label>
-                        <input class="form-control" id="update-image3" type="text">
-                        <span class="control-error" id="lblVMonthlyRatee"></span>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-user-gender">Gender </label>
+                            <input class="form-control" id="update-user-gender"  type="text">
+                            <span class="control-error" id="lblVDailyRatesg"></span>
+                        </div>
                     </div>
 
-                    <div class="form-groupFT">
-                        <label class="form-label" for="update-image4">Image 4</label>
-                        <input class="form-control" id="update-image4" type="text">
-                        <span class="control-error" id="lblVMonthlyRater"></span>
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="update-user-address">Address </label>
+                            <input class="form-control" id="update-user-address"  type="text">
+                            <span class="control-error" id="lblVDailyRatesgz"></span>
+                        </div>
                     </div>
+                    <br>
+
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="user-frontViewNicUpdate">Front View Of NIC</label>
+                            <input class="form-control" id="user-frontViewNicUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesad"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-groupNFP">
+                            <label class="form-label" for="user-backViewNicUpdate">Back View Of NIC</label>
+                            <input class="form-control" id="user-backViewNicUpdate"  type="text">
+                            <span class="control-error" id="lblVDailyRatesd"></span>
+                        </div>
+                    </div>
+
                 </div>
+
                 <br>
 
-                </div>
+
+                <br>
                 <br>
 
             </form>
 
             <div class="row">
                 <div class="col-sm-3" style="margin-left: 9px">
-                    <button class="btn btn-primary" id="btnUpdateVehicle"
+                    <button class="btn btn-primary" id="btnUpdateUser"
                             style="background-color: navy;color: white; border: none">Update
                     </button>
                 </div>
 
                 <div class="col-sm-3" style="margin-left: -152px">
-                    <button class="btn btn-primary" id="btnDeleteVehicle"
+                    <button class="btn btn-primary" id="btnDeleteUser"
                             style="background-color: orangered;color: white; border: none">Delete
                     </button>
                 </div>
@@ -743,24 +727,20 @@
                         <table class="table table-primary table-striped">
                             <thead>
                             <tr>
-                                <th scope="col">Vehicle Id</th>
-                                <th scope="col">Brand</th>
-                                <th scope="col">Colour</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Transmission</th>
-                                <th scope="col">Seat Capacity</th>
-                                <th scope="col">Fuel Type</th>
-                                <th scope="col">Model</th>
-                                <th scope="col">Sub name</th>
-                                <th scope="col">Price Per KM</th>
-                                <th scope="col">F Image</th>
-                                <th scope="col">B Image</th>
-                                <th scope="col">R Image</th>
-                                <th scope="col">L Image</th>
+                                <th>User Id</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Age</th>
+                                <th>Contact</th>
+                                <th>Email</th>
+                                <th>NIC</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Front NIC</th>
+                                <th>Back NIC</th>
                             </tr>
                             </thead>
-                            <tbody id="vehicleTB">
+                            <tbody id="userTB">
 
                             </tbody>
                         </table>
@@ -786,12 +766,14 @@
 
 
     <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
-    <script src="asserts/js/controller/VehicleAdminController.js"></script>
-    <script src="asserts/js/controller/VehicleController.js"></script>
+    <script src="asserts/js/controller/GuideAdminController.js"></script>
+    <script src="asserts/js/controller/GuideController.js"></script>
+    <script src="asserts/js/controller/UserAdminController.js"></script>
+    <script src="asserts/js/controller/UserController.js"></script>
 
     <script>
         $(document).ready(function() {
-            $("#new_vehicle_id").hide();
+            $("#save-user-id").hide();
         });
     </script>
 </body>

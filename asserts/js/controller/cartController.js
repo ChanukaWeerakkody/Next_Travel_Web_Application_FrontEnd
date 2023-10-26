@@ -51,9 +51,9 @@ $("#checkPackagePrice").click(function () {
 
 
 $("#purchaseOrder").click(function () {
-    //addPurchaseVehicle();
-    //addPurchaseGuide();
-    //addPurchaseHotel();
+    addPurchaseVehicle();
+    addPurchaseGuide();
+    addPurchaseHotel();
     addPurchasePackage();
 })
 //purchase Vehicle
@@ -117,8 +117,7 @@ function addPurchaseVehicle() {
             if (resp.status === 200) {
                 alert(resp.message)
             } else {
-                alert('Added Successfully!');
-                //uploadCarImages(vehicleId);
+
             }
         },
         error: function (error) {
@@ -152,8 +151,6 @@ function addPurchaseGuide(){
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert('Added Successfully!');
-                //uploadCarImages(vehicleId);
             }
         },
 
@@ -191,8 +188,6 @@ function addPurchaseHotel(){
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert('Added Successfully!');
-                //uploadCarImages(vehicleId);
             }
         },
 
