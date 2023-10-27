@@ -42,12 +42,10 @@ $("#checkPackagePrice").click(function () {
     $("#sumLabelPackage").text("Sum of Package : " + fullPricePackage);
 
     var totalPrice=fullPriceVehicle+fullPriceGuide+fullPriceHotel+fullPricePackage;
+    $("#save-order-finalPrice").val(totalPrice);
 
     $("#sumLabelTotalPrice").text("Total is : " + totalPrice);
 })
-
-
-
 
 
 $("#purchaseOrder").click(function () {
@@ -55,6 +53,7 @@ $("#purchaseOrder").click(function () {
     addPurchaseGuide();
     addPurchaseHotel();
     addPurchasePackage();
+    addPurchaseOrder();
 })
 //purchase Vehicle
 function addPurchaseVehicle() {
@@ -239,7 +238,46 @@ function addPurchasePackage(){
     })
 }
 
+//purchase Order
+function addPurchaseOrder(){
+    let purchaseOrder={
 
+        vehicleId:$("#save-vehicleRental-vehicleId").val(),
+        hotelId:$("#save-hotelRental-hotelId").val(),
+        packageId:$("#save-packageRental-packageId").val(),
+        guideId:$("#save-guideRental-guideId").val(),
+        userId:1,
+
+        orderId:$("#save-order-id").val(),
+
+        finalPrice:$("#save-order-finalPrice").val(),
+
+    }
+
+    let jHotel =JSON.stringify(purchaseOrder);
+
+    console.log(jHotel);
+
+    $.ajax({
+        url: baseUrlRental + "purchaseOrder",
+        method: "POST",
+        data:purchaseOrder,
+        success:function (res){
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Added Successfully Order!');
+            }
+        },
+
+        error: function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+
+    })
+}
 
 
 

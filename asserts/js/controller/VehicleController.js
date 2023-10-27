@@ -324,7 +324,7 @@ function rentItClick() {
     const buttons = document.querySelectorAll('.btn_RentIt');
 
     $(".btn_RentIt").click(function () {
-        alert("Works")
+        alert("Added to Cart")
 
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
@@ -343,6 +343,7 @@ function rentItClick() {
             $(this).text("Added");
             $(this).css({
                 "background": "#D50137",
+                "border-radius": 5,
                 "color": "#ffffff"
             });
         } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
@@ -415,5 +416,23 @@ function sendVehicleNameToCart() {
     return vNameAr;
 }
 
+loadAllVehiclesOrders();
+//Load All Vehicles Orders
+function loadAllVehiclesOrders(){
+    $("vehicleOrdersTB").empty();
+    $.ajax({
+        url: baseurlGuide+"purchaseVehicle",
+        method: "GET",
+        success:function (resp){
+            for(const order of resp.data){
+                let row = `<tr><td>${order.vehicleOid}</td><td>${order.vehicleId}</td><td>${order.driverName}</td><td>${order.driverContact}</td>
+                <td>${order.image1}</td><td>${order.image2}</td><td>${order.pricePerKM}</td><td>${order.km}</td>
+                <td>${order.fullPrice}</td><td>${order.userId}</td></tr>`;
+                $("#vehicleOrdersTB").append(row);
+            }
+            //bindClickEventsVehicles();
+        }
+    })
+}
 
 

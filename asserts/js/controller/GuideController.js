@@ -295,10 +295,10 @@ function rentItGuideClick() {
     const buttons = document.querySelectorAll('.btn_RentItGuide');
 
     $(".btn_RentItGuide").click(function () {
-        alert("Works")
+        alert("Added to Cart")
 
-        var bgColor = $(this).css("background-color");
-        console.log(bgColor)
+        var bgColorGuide = $(this).css("background-color");
+        console.log(bgColorGuide)
 
         let attrFullName = $(this).attr("data-fullName");
         let attrAge = $(this).attr("data-age");
@@ -310,19 +310,20 @@ function rentItGuideClick() {
 
         setBrandToArrayGuide(this);
 
-        if (colorsAreEqual(bgColor, "rgb(240, 240, 240)")) { //firstTime With hover
+        if (colorsAreEqualGuide(bgColorGuide, bgColorGuide)) { //firstTime With hover
             $(this).text("Added");
             $(this).css({
                 "background": "#D50137",
+                "border-radius": 5,
                 "color": "#ffffff"
             });
-        } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
+        } else if (colorsAreEqualGuide(bgColorGuide, "rgb(213, 1, 55)")) { //red
             $(this).text("Rent It");
             $(this).css({
                 "background": "#F7F7F7",
                 "color": "#444444",
             });
-        } else if (colorsAreEqual(bgColor, "rgb(247, 247, 247)")) { //red turn to past value
+        } else if (colorsAreEqualGuide(bgColorGuide, "rgb(247, 247, 247)")) { //red turn to past value
             $(this).text("Added");
             $(this).css({
                 "background": "#D50137",
@@ -331,7 +332,7 @@ function rentItGuideClick() {
         }
     })
 }
-function colorsAreEqual(color1, color2) {
+function colorsAreEqualGuide(color1, color2) {
     var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
     var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
     if (rgb1.length !== 3 || rgb2.length !== 3) {
@@ -383,7 +384,22 @@ function sendVehicleNameToCart() {
     return vNameArGuide;
 }
 
-
+loadAllGuidesOrders();
+//Load All Guides Orders
+function loadAllGuidesOrders(){
+    $("guideOrdersTB").empty();
+    $.ajax({
+        url: baseurlGuide+"purchaseGuide",
+        method: "GET",
+        success:function (resp){
+            for(const guideOrder of resp.data){
+                let row = `<tr><td>${guideOrder.guideOid}</td><td>${guideOrder.guideId}</td><td>${guideOrder.pricePerDay}</td><td>${guideOrder.days}</td>
+                <td>${guideOrder.fullPrice}</td><td>${guideOrder.userId}</td></tr>`;
+                $("#guideOrdersTB").append(row);
+            }
+        }
+    })
+}
 
 
 

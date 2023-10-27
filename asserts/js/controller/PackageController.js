@@ -235,15 +235,6 @@ $("#btnDeletePackage").click(function (){
 });
 
 
-
-
-
-
-
-
-
-
-
 loadAllPackagesToUser();
 function loadAllPackagesToUser() {
     $("#cusSupLuxPackageContainer").empty();
@@ -304,7 +295,7 @@ function loadAllPackagesToUser() {
                         </div>
                     </div>`;
 
-                if (hotelPackage.category === "Super Luxury") {
+                if (hotelPackage.category === "Super-Luxury") {
                     $("#cusSupLuxPackageContainer").append(div);
                 } else if (hotelPackage.category === "Luxury") {
                     $("#cusLuxPackageContainer").append(div);
@@ -338,10 +329,11 @@ function rentItPackageClick() {
 
         setBrandToArrayPackage(this);
 
-        if (colorsAreEqual(bgColor, "rgb(239, 239, 239)")) { //firstTime With hover
+        if (colorsAreEqual(bgColor, bgColor)) { //firstTime With hover
             $(this).text("Added");
             $(this).css({
                 "background": "#D50137",
+                "border-radius": 5,
                 "color": "#ffffff"
             });
         } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
@@ -414,7 +406,22 @@ function sendVehicleNameToCart() {
 
 
 
-
+loadAllHotelPackagesOrders();
+//Load All Hotel PackagesOrders
+function loadAllHotelPackagesOrders(){
+    $("hotelPackageOrdersTB").empty();
+    $.ajax({
+        url: baseurlPackage+"purchaseHotelPackage",
+        method: "GET",
+        success:function (resp){
+            for(const packageOrder of resp.data){
+                let row = `<tr><td>${packageOrder.packageOid}</td><td>${packageOrder.packageId}</td><td>${packageOrder.pricePerDay}</td><td>${packageOrder.days}</td>
+                <td>${packageOrder.fullPrice}</td><td>${packageOrder.userId}</td></tr>`;
+                $("#hotelPackageOrdersTB").append(row);
+            }
+        }
+    })
+}
 
 
 

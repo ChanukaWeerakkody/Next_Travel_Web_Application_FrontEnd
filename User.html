@@ -102,61 +102,6 @@
 
                 <li class="nav-heading">Pages</li>
 
-                <!-- Start Reser Page Nav
-                <li class="nav-item" id="adRes">
-                    <a class="nav-link collapsed">
-                        <i class="fa-solid fa-book"></i>
-                        <span>Reservation</span>
-                    </a>
-                </li> End Reser Page Nav
-
-                 Start Car Page Nav
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse">
-                        <i class="fa-solid fa-car-rear"></i><span>Vehicle</span><i
-                            class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="car-nav">
-                        <li id="adViewCar">
-                            <a>
-                                <i class="bi bi-circle"></i><span>Add Vehicle</span>
-                            </a>
-                        </li>
-                        <li id="adViewCarView">
-                            <a>
-                                <i class="bi bi-circle"></i><span>View vehicle</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li> End Car Nav
-
-                 Start Package Page Nav
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#package-nav" data-bs-toggle="collapse">
-                        <i class="fa-solid fa-car-rear"></i><span>Package</span><i
-                            class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="package-nav">
-                        <li id="adViewPackage">
-                            <a>
-                                <i class="bi bi-circle"></i><span>Add Package</span>
-                            </a>
-                        </li>
-                        <li id="adViewPackageView">
-                            <a>
-                                <i class="bi bi-circle"></i><span>View Package</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li> End Package Nav
-
-                 Start Customer Page Nav
-                <li class="nav-item" id="adViewAllCustomer">
-                    <a class="nav-link collapsed">
-                        <i class='bx bxs-user-voice'></i>
-                        <span>Customer</span>
-                    </a>
-                </li> End Customer Page Nav -->
 
                 <!-- Start User Page Nav -->
                 <li class="nav-item">
@@ -179,22 +124,12 @@
                     </ul>
                 </li><!-- End Driver Nav -->
 
-                <!-- Start Hotel Page Nav
-                <li class="nav-item" id="adHotel">
-                    <a class="nav-link collapsed">
-                        <i class="fa-solid fa-book"></i>
-                        <span>Hotel</span>
-                    </a>
-                </li> End Hotel Page Nav -->
-
-
-                <!-- Start payment Page Nav
-                <li class="nav-item" id="adPayment">
+                <li class="nav-item" id="adViewOrders">
                     <a class="nav-link collapsed">
                         <i class="fa-solid fa-money-check-dollar"></i></i>
-                        <span>Payment</span>
+                        <span>View Orders</span>
                     </a>
-                </li> End payment Page Nav -->
+                </li>
             </ul>
 
         </aside>
@@ -450,9 +385,9 @@
         </main><!-- End #main -->
     </main>
 
-    <!----------------------------------------------------GUIDE FORM--------------------------------------->
+    <!----------------------------------------------------USER FORM--------------------------------------->
     <main id="adminAddUser">
-        <main class="main" id="adminGuideAdd">
+        <main class="main" id="adminUserAdd">
 
             <div class="container">
                 <section
@@ -466,7 +401,7 @@
                                     <div class="card-body">
 
                                         <div class="pt-4 pb-2">
-                                            <h5 class="card-title text-center pb-0 fs-4">Add Guide</h5>
+                                            <h5 class="card-title text-center pb-0 fs-4">Add User</h5>
                                         </div>
 
                                         <form class="row g-3" name="form1">
@@ -584,7 +519,7 @@
         </main>
     </main>
 
-    <!----------------------------------------------------GUIDE VIEW FORM--------------------------------------->
+    <!----------------------------------------------------USER VIEW FORM--------------------------------------->
     <main id="spaAdminViewUser">
         <main class="main" id="adminViewUserSpa">
 
@@ -753,6 +688,41 @@
         </main><!-- End #main -->
     </main>
 
+    <!----------------------------------------------------VIEW ORDERS FORM--------------------------------------->
+    <main id="spaAdminViewOrders">
+        <main class="main" id="adminViewVehicleOrdersSpa">
+
+            <div class="pagetitle">
+                <h1>View Orders</h1>
+            </div><!-- End Page Title -->
+
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 70vh;">
+                        <table class="table table-primary table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Order Id</th>
+                                <th scope="col">Vehicle Id</th>
+                                <th scope="col">Hotel Id</th>
+                                <th scope="col">Package Id</th>
+                                <th scope="col">Guide Id</th>
+                                <th scope="col">User Id</th>
+                                <th scope="col">Total Price</th>
+                            </tr>
+                            </thead>
+                            <tbody id="ordersTB">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </main><!-- End #main -->
+    </main>
 
     <script src="asserts/js/jquery-3.6.1.min.js"></script>
 

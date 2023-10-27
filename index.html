@@ -308,6 +308,11 @@
 
     <!--Cart section-->
     <section id="userCart">
+        <div class="form-group col-md-6 mb-3">
+            <input aria-label="Disabled input example" class="form-control mb-3"
+                   id="save-order-id" placeholder="Order Id" name="orderId"
+                   type="text">
+        </div>
         <!--vehicle rental section-->
         <form id="vehicleRentalViewForm" style="margin-left: 5px; margin-top: 44px;">
             <h1>Vehicle Rental</h1>
@@ -657,6 +662,7 @@
 
         </form>
 
+
         <button class="p-2" id="checkPackagePrice">Check Price</button>
         <br>
         <label id="sumLabelVehicle" style="color: red"></label>
@@ -668,7 +674,12 @@
         <label id="sumLabelPackage" style="color: red"></label>
         <br>
 
-        <label id="sumLabelTotalPrice" style="color: red"></label>
+        <label id="sumLabelTotalPrice"  style="color: red"></label>
+        <div class="form-group col-md-6 mb-3">
+            <input aria-label="Disabled input example" class="form-control mb-3"
+                   id="save-order-finalPrice" placeholder="Total Price" name="finalPrice"
+                   type="text">
+        </div>
         <br><br>
         <button class="p-2" id="purchaseOrder">Purchase Order</button>
 
@@ -1237,14 +1248,17 @@
     <script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
 
     <script src="asserts/js/main.js"></script>
-    <script src="asserts/js/main/carDetail.js"></script>
     <script src="asserts/js/main/nav.js"></script>
-    <script src="asserts/js/controller/customerController.js"></script>
 
-    <!--<script src="asserts/js/controller/cartController.js"></script>-->
+    <script>
+        $(document).ready(function() {
+            $("#save-order-id").hide();
+        });
+        $(document).ready(function() {
+            $("#save-order-finalPrice").hide();
+        });
 
-
-
+    </script>
 
     <script>
         document.getElementById("loginForm").addEventListener("submit", function (event) {
@@ -1271,10 +1285,5 @@
                 });
         });
     </script>
-    <script>
-
-    </script>
-
-
 </body>
 </html>

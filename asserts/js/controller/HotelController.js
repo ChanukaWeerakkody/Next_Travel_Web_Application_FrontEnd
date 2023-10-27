@@ -256,7 +256,7 @@ function rentItHotelClick() {
     const buttons = document.querySelectorAll('.btn_RentItHotel');
 
     $(".btn_RentItHotel").click(function () {
-        alert("Works")
+        alert("Added to Cart")
 
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
@@ -271,10 +271,11 @@ function rentItHotelClick() {
 
         setBrandToArrayHotel(this);
 
-        if (colorsAreEqual(bgColor, "rgb(239, 239, 239)")) { //firstTime With hover
+        if (colorsAreEqual(bgColor, bgColor)) { //firstTime With hover
             $(this).text("Added");
             $(this).css({
                 "background": "#D50137",
+                "border-radius": 5,
                 "color": "#ffffff"
             });
         } else if (colorsAreEqual(bgColor, "rgb(213, 1, 55)")) { //red
@@ -329,7 +330,7 @@ function setBrandToArrayHotel(param) {
     $('#save-hotelRental-price').val(temporaryHotelStore.hotel.priceHotel);
 
     if (bool) {;
-        vNameArHotel.push(hotelPackage);
+        vNameArHotel.push(hotel);
     } else {
         for (var i = 0; i < vNameArHotel.length; i++) {
             if (vNameArHotel[i].model === $(param).attr("data-dtaHotelName")) {
@@ -343,4 +344,23 @@ function setBrandToArrayHotel(param) {
 
 function sendVehicleNameToCart() {
     return vNameArHotel;
+}
+
+
+
+loadAllHotelsOrders();
+//Load All Hotel Orders
+function loadAllHotelsOrders(){
+    $("hotelOrdersTB").empty();
+    $.ajax({
+        url: baseurlHotel+"purchaseHotel",
+        method: "GET",
+        success:function (resp){
+            for(const hotelOrder of resp.data){
+                let row = `<tr><td>${hotelOrder.hotelOid}</td><td>${hotelOrder.hotelId}</td><td>${hotelOrder.pricePerDay}</td><td>${hotelOrder.days}</td>
+                <td>${hotelOrder.fullPrice}</td><td>${hotelOrder.userId}</td></tr>`;
+                $("#hotelOrdersTB").append(row);
+            }
+        }
+    })
 }

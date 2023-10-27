@@ -83,7 +83,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const password = document.getElementById("password").value;
 
     // Send a POST request to the Spring Boot backend
-    fetch("http://localhost:8080/user/loginUser", {
+    fetch("http://localhost:8080/user/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -98,20 +98,20 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                     /*$("#vehicleRentalViewForm").css("display", "block");
                     $("#hotelRentalViewForm").css("display", "none");
                     $("#hotelPackageRentalViewForm").css("display", "none");*/
-                    $("#guideRentalViewForm").css("display", "none");
+                    //$("#guideRentalViewForm").css("display", "none");
                     $("#userCart").css("display", "block");
 
-                }else if(!$.isEmptyObject(temporaryGuideStore)){
+                }else if($.isEmptyObject(temporaryGuideStore)){
                     /*$("#vehicleRentalViewForm").css("display", "none");
                     $("#hotelRentalViewForm").css("display", "none");
                     $("#hotelPackageRentalViewForm").css("display", "none");*/
-                    $("#guideRentalViewForm").css("display", "block");
+                    $("#guideRentalViewForm").css("display", "none");
                     $("#userCart").css("display", "block");
 
                 }else if(!$.isEmptyObject(temporaryHotelStore)){
                     /*$("#hotelRentalViewForm").css("display", "block");
                     $("#vehicleRentalViewForm").css("display", "none");*/
-                    $("#guideRentalViewForm").css("display", "none");
+                    //$("#guideRentalViewForm").css("display", "none");
                     //$("#hotelPackageRentalViewForm").css("display", "none");
                     $("#userCart").css("display", "block");
 
@@ -119,7 +119,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                     /*$("#hotelPackageRentalViewForm").css("display", "block");
                     $("#hotelRentalViewForm").css("display", "none");
                     $("#vehicleRentalViewForm").css("display", "none");*/
-                    $("#guideRentalViewForm").css("display", "none");
+                    //$("#guideRentalViewForm").css("display", "none");
                     $("#userCart").css("display", "block");
 
                 }else {
@@ -127,18 +127,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                     alert("Array is not null or empty");
                     $("#userCart").css("display", "block");
                 }
-
-
-
-
-
-
-
-
-
-
-
-
 
                 $("#logIn").css("display","none");
             } else {
@@ -366,7 +354,22 @@ $("#btnDeleteUser").click(function (){
 
 
 
-
+loadAllOrders();
+//Load All Hotel Orders
+function loadAllOrders(){
+    $("ordersTB").empty();
+    $.ajax({
+        url: baseurlUser+"purchaseOrder",
+        method: "GET",
+        success:function (resp){
+            for(const purchase of resp.data){
+                let row = `<tr><td>${purchase.orderId}</td><td>${purchase.vehicleId}</td><td>${purchase.hotelId}</td><td>${purchase.packageId}</td>
+                <td>${purchase.guideId}</td><td>${purchase.userId}</td><td>${purchase.finalPrice}</td></tr>`;
+                $("#ordersTB").append(row);
+            }
+        }
+    })
+}
 
 
 
