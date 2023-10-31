@@ -1,4 +1,4 @@
-var baseurlUser = "http://localhost:8080/";
+var baseurlUser = "http://localhost:8085/";
 
 $(document).ready(function() {
     $("#txtUserId").hide();
@@ -83,7 +83,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const password = document.getElementById("password").value;
 
     // Send a POST request to the Spring Boot backend
-    fetch("http://localhost:8080/user/login", {
+    fetch("http://localhost:8085/user/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
