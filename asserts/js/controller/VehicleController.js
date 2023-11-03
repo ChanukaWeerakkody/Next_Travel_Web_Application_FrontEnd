@@ -2,6 +2,13 @@ var baseurlGuide = "http://localhost:8081/";
 var vNameAr = [];
 var temporaryOrderStore = {};
 
+
+var brandRegex=/^[A-z ]{3,30}$/;
+var subNameRegex=/^[A-z ]{3,30}$/;
+var colourRegex=/^[A-z ]{3,30}$/;
+var seatCapacityRegex=/^\d+$/;
+var pricePerKMRegex=/^\d+(\.\d{1,2})?$/;
+
 $("#btnAdminAddVehicle").click(function () {
     addVehicle();
 })
@@ -39,32 +46,38 @@ function addVehicle() {
 
 
 
+
     let imageV1 = frontFileNameV;
     let imageV2 = backFileNameV;
     let imageV3 = sideFileNameV;
     let imageV4 = interiorFileNameV;
 
 
+    if (brand.match(brandRegex) &&subName.match(subNameRegex) && pata.match(colourRegex)&& seatCapacity.match(seatCapacityRegex)&& pricePerKM.match(pricePerKMRegex)){
+        var vehicleDTO = {
+            vehicleId:vehicleId,
+            brand:brand,
+            subName:subName,
+            type:type,
+            pata:pata,
+            category:category,
+            transmission:transmission,
+            seatCapacity:seatCapacity,
+            fuelType:fuelType,
+            model:model,
+            pricePerKM:pricePerKM,
 
-    var vehicleDTO = {
-        vehicleId:vehicleId,
-        brand:brand,
-        subName:subName,
-        type:type,
-        pata:pata,
-        category:category,
-        transmission:transmission,
-        seatCapacity:seatCapacity,
-        fuelType:fuelType,
-        model:model,
-        pricePerKM:pricePerKM,
+            image1: "uploads/" + imageV1,
+            image2: "uploads/" + imageV2,
+            image3: "uploads/" + imageV3,
+            image4: "uploads/" + imageV4,
 
-        image1: "uploads/" + imageV1,
-        image2: "uploads/" + imageV2,
-        image3: "uploads/" + imageV3,
-        image4: "uploads/" + imageV4,
-
+        }
+    }else {
+        alert("Error occurred while saving the vehicle. Please try again later.");
     }
+
+
 
     vData1.append("vehicleFiles", frontViewFileV)
     vData1.append("vehicleFiles", backViewFileV)
@@ -74,6 +87,7 @@ function addVehicle() {
     vData1.append("vehicle", new Blob([JSON.stringify(vehicleDTO)], {type: "application/json"}))
 
     console.log(vehicleDTO);
+
 
     $.ajax({
         url: baseurlGuide + "vehicle",
@@ -87,7 +101,6 @@ function addVehicle() {
                 alert(resp.message)
             } else {
                 alert('Added Successfully!');
-                uploadCarImages(vehicleId);
             }
         },
         error: function (error) {

@@ -197,7 +197,7 @@ loadAllHotelsView();
 function loadAllHotelsView(){
     $("chooseHotelTB").empty();
     $.ajax({
-        url: baseurlPackage+"hotel",
+        url: "http://localhost:8083/"+"hotel",
         method: "GET",
         success:function (resp){
             for(const hotel of resp.data){
@@ -314,7 +314,7 @@ function rentItPackageClick() {
     const buttons = document.querySelectorAll('.btn_RentItPackage');
 
     $(".btn_RentItPackage").click(function () {
-        alert("Works")
+        alert("Added to cart!")
 
         var bgColor = $(this).css("background-color");
         console.log(bgColor)

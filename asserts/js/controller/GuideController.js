@@ -80,7 +80,7 @@ function addGuide() {
         data: vData,
         success: function (resp) {
             if (resp.status === 200) {
-                alert(res.message)
+                alert(resp.message)
             } else {
                 alert('Added Successfully!');
             }

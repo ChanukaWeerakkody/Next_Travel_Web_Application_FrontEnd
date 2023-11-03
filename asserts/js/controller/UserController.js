@@ -131,7 +131,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                 $("#logIn").css("display","none");
             } else {
                 // Handle authentication failure
-                alert("Wrong")
+                //alert("Wrong")
             }
         });
 
@@ -359,7 +359,7 @@ loadAllOrders();
 function loadAllOrders(){
     $("ordersTB").empty();
     $.ajax({
-        url: baseurlUser+"purchaseOrder",
+        url: "http://localhost:8080/"+"purchaseOrder",
         method: "GET",
         success:function (resp){
             for(const purchase of resp.data){

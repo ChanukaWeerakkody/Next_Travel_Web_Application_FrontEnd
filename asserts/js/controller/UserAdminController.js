@@ -31,7 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                     $('#spaAdminMainLogIn').css('display','none');
                 } else {
                     // Handle authentication failure
-                    alert("Wrong")
+                    //alert("Wrong")
                 }
             });
     }else{

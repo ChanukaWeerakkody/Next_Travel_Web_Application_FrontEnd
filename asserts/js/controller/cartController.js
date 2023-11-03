@@ -106,7 +106,7 @@ function addPurchaseVehicle() {
     console.log(vehicleOrderDTO);
 
     $.ajax({
-        url: baseUrlRental + "purchaseVehicle",
+        url: "http://localhost:8081/" + "purchaseVehicle",
         method: "POST",
         async: true,
         contentType: false,
@@ -143,7 +143,7 @@ function addPurchaseGuide(){
     console.log(jHotel);
 
     $.ajax({
-        url: baseUrlRental + "purchaseGuide",
+        url: "http://localhost:8082/" + "purchaseGuide",
         method: "POST",
         data:purchaseGuide,
         success:function (res){
@@ -180,7 +180,7 @@ function addPurchaseHotel(){
     console.log(jHotel);
 
     $.ajax({
-        url: baseUrlRental + "purchaseHotel",
+        url: "http://localhost:8083/" + "purchaseHotel",
         method: "POST",
         data:purchaseHotel,
         success:function (res){
@@ -217,14 +217,14 @@ function addPurchasePackage(){
     console.log(jHotel);
 
     $.ajax({
-        url: baseUrlRental + "purchaseHotelPackage",
+        url: "http://localhost:8084/" + "purchaseHotelPackage",
         method: "POST",
         data:purchasePackage,
         success:function (res){
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert('Added Successfully!');
+                //alert('Added Successfully!');
                 //uploadCarImages(vehicleId);
             }
         },
